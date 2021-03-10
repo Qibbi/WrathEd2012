@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<AssetDefinition xmlns="uri:thundermods.net:SAGE:WrathEdXML:AssetDefinition">
+
+	<Asset
+	id="SoundOrEvaEvent">
+		<EntryRelocation
+			id="Sound"
+			AssetType="AudioEventInfoRef"
+			IsAttribute="true" />
+		<EntryRelocation
+			id="EvaEvent"
+			AssetType="String"
+			IsAttribute="true" />
+	</Asset>
+
+</AssetDefinition>

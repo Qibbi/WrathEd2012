@@ -1,0 +1,118 @@
+﻿<Window
+	x:Class="WrathEd.CompileWindow"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:we="clr-namespace:WrathEd.Controls;assembly=WrathEdControls"
+	Style="{DynamicResource WrathEdSubWindow}"
+	Height="400"
+	Width="600"
+	Title="WrathEd Compiler"
+	ShowInTaskbar="true"
+	WindowStartupLocation="CenterScreen"
+	MouseLeftButtonDown="Window_MouseLeftButtonDown">
+	<Grid
+		Margin="30">
+		<Grid.RowDefinitions>
+			<RowDefinition
+				Height="100" />
+			<RowDefinition
+				Height="40" />
+			<RowDefinition
+				Height="30" />
+			<RowDefinition
+				Height="30" />
+			<RowDefinition
+				Height="30" />
+			<RowDefinition />
+			<RowDefinition />
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition
+				Width="150" />
+			<ColumnDefinition />
+		</Grid.ColumnDefinitions>
+		<Image
+			Source="/WrathEd;component/Documentation/Images/WrathEd.png"
+			Height="98"
+			Grid.Row="0"
+			Grid.ColumnSpan="2" />
+		<TextBlock
+			x:Name="CompileTitle"
+			Style="{DynamicResource WrathEdTextBlockTitle}"
+			Text="CompileTitle"
+			VerticalAlignment="Bottom"
+			Grid.Row="1"
+			Grid.ColumnSpan="2" />
+		<TextBlock
+			Style="{DynamicResource WrathEdTextBlock}"
+			Text="Game: "
+			TextAlignment="Right"
+			VerticalAlignment="Bottom"
+			Grid.Row="2"
+			Grid.Column="0" />
+		<TextBlock
+			Style="{DynamicResource WrathEdTextBlock}"
+			Text="File: "
+			TextAlignment="Right"
+			VerticalAlignment="Bottom"
+			Grid.Row="3"
+			Grid.Column="0" />
+		<TextBlock
+			Style="{DynamicResource WrathEdTextBlock}"
+			Text="Compiling: "
+			TextAlignment="Right"
+			VerticalAlignment="Center"
+			Grid.Row="4"
+			Grid.Column="0" />
+		<TextBlock
+			x:Name="GameName"
+			Style="{DynamicResource WrathEdTextBlock}"
+			Text="GameName"
+			TextAlignment="Left"
+			VerticalAlignment="Bottom"
+			Grid.Row="2"
+			Grid.Column="1" />
+		<TextBlock
+			x:Name="FileName"
+			Style="{DynamicResource WrathEdTextBlock}"
+			Text="FileName"
+			TextAlignment="Left"
+			VerticalAlignment="Bottom"
+			Grid.Row="3"
+			Grid.Column="1" />
+		<TextBlock
+			x:Name="AssetName"
+			Style="{DynamicResource WrathEdTextBlock}"
+			Text="AssetName"
+			TextAlignment="Left"
+			VerticalAlignment="Center"
+			Grid.Row="4"
+			Grid.Column="1" />
+		<we:ProgressBar
+			x:Name="Progress"
+			Width="500"
+			IsProgress="false"
+			Grid.Row="5"
+			Grid.ColumnSpan="2" />
+		<TextBlock
+			x:Name="ErrorDescription"
+			Style="{DynamicResource WrathEdTextBlock}"
+			Text="ErrorDescription"
+			TextAlignment="Left"
+			VerticalAlignment="Center"
+			HorizontalAlignment="Left"
+			Width="350"
+			TextWrapping="Wrap"
+			Grid.Row="6"
+			Grid.ColumnSpan="2" />
+		<Button
+			x:Name="CloseButton"
+			HorizontalAlignment="Right"
+			Style="{DynamicResource WrathEdButton}"
+			Click="CloseButton_Click"
+			Content="Close"
+			IsDefault="true"
+			Grid.Row="7"
+			Grid.ColumnSpan="2" />
+	</Grid>
+</Window>

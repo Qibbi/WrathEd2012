@@ -1,0 +1,63 @@
+﻿<Window
+	x:Class="WrathEd.AchievementBox"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	Title="Achievement Unlocked"
+	Height="170"
+	Width="520"
+	ResizeMode="NoResize"
+	WindowStyle="None"
+	Topmost="true"
+	WindowStartupLocation="CenterScreen"
+	AllowsTransparency="true"
+	Background="Transparent"
+	Style="{DynamicResource WrathEdSubWindow}"
+	MouseUp="Window_MouseUp">
+	<Grid
+		Margin="10">
+		<Grid.RowDefinitions>
+			<RowDefinition />
+			<RowDefinition
+				Height="30" />
+		</Grid.RowDefinitions>
+		<Grid
+			Background="{StaticResource AchievementBackground}"
+			Grid.Row="0">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition
+					Width="120" />
+				<ColumnDefinition />
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition
+					Height="40" />
+				<RowDefinition />
+			</Grid.RowDefinitions>
+			<Image
+				x:Name="AchievementImage"
+				Width="100"
+				Height="100"
+				Grid.Column="0"
+				Grid.RowSpan="2" />
+			<TextBlock
+				x:Name="AchievementName"
+				Height="25"
+				Style="{DynamicResource WrathEdTextBlockAchievement}"
+				VerticalAlignment="Bottom"
+				Grid.Column="1"
+				Grid.Row="0" />
+			<TextBlock
+				x:Name="AchievementDesc"
+				Height="70"
+				Style="{DynamicResource WrathEdTextBlockAchievementDesc}"
+				Grid.Column="1"
+				Grid.Row="1" />
+		</Grid>
+		<TextBlock
+			x:Name="AchievementTitle"
+			TextAlignment="Center"
+			VerticalAlignment="Bottom"
+			Style="{DynamicResource WrathEdTextBlockAchievement}"
+			Grid.Row="2" />
+	</Grid>
+</Window>

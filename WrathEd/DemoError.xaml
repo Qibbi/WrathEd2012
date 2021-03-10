@@ -1,0 +1,45 @@
+﻿<Window
+	x:Class="WrathEd.DemoError"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	Title="DEMO VERSION!"
+	Style="{DynamicResource WrathEdSubWindow}"
+	Height="300"
+	Width="600"
+	ShowInTaskbar="true"
+	WindowStartupLocation="CenterScreen">
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="140" />
+			<RowDefinition />
+			<RowDefinition />
+		</Grid.RowDefinitions>
+		<Image
+			Source="/WrathEd;component/Documentation/Images/WrathEd.png"
+			Height="98" />
+		<TextBlock
+			x:Name="Description"
+			Style="{DynamicResource WrathEdTextBlock}"
+			VerticalAlignment="Top"
+			Margin="10, 0"
+			TextAlignment="Center"
+			TextWrapping="Wrap"
+			Grid.Row="1" />
+		<TextBlock
+			x:Name="EX"
+			Style="{DynamicResource WrathEdTextBlock}"
+			VerticalAlignment="Center"
+			TextAlignment="Center"
+			TextWrapping="Wrap"
+			Grid.Row="1" />
+		<Button
+			x:Name="CloseButton"
+			Style="{DynamicResource WrathEdButton}"
+			Click="CloseButton_Click"
+			HorizontalAlignment="Center"
+			VerticalAlignment="Center"
+			Content="Close"
+			IsDefault="true"
+			Grid.Row="2" />
+	</Grid>
+</Window>

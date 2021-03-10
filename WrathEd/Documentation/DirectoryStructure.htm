@@ -1,0 +1,47 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="author" content="thundermods.net" />
+	<meta name="copyright" content="thundermods.net" />
+	<meta name="description" content="Documentation - WrathEd" />
+
+	<link rel="stylesheet" href="Documentation.css" />
+	<title>Documentation - WrathEd - Directory Structure</title>
+</head>
+<body>
+<div align="center">
+	<div class="content">
+		<div class="navigation">
+			<div class="navigationhead">WrathEd</div>
+			<div class="navigationlink">• <a href="index.htm" class="navigation">Index</a></div>
+			<div class="navigationhead">Mod Creation</div>
+			<div class="navigationlink">• Directory Structure</div>
+			<div class="navigationlink">• <a href="XMLAssets.htm" class="navigation">XML Assets</a></div>
+			<div class="navigationlink">• <a href="CustomMaps.htm" class="navigation">Custom Maps</a></div>
+			<div class="navigationlink">• <a href="BuildingAMod.htm" class="navigation">Building a Mod</a></div>
+		</div>
+		<div class="main">
+If you are creating a Mod <span class="important">for Tiberium Wars, Red Alert 3, or Tiberium Twilight the name can be no more than 15 characters long</span>.<br />
+<br />
+The directory structure for your mod should look similar to the image below:
+
+<br />
+<span class="title">Required Files:</span><br />
+If you are building a Mod for Tiberium Wars, Red Alert 3, or Tiberium Twilight you have to have a file called mod.xml in your Data folder.<br />
+<span class="important">For Kane's Wrath</span> your main file would be called <span class="important">static.xml</span>. This is also the file that is referenced by the default batch files supplied with WrathEd. These names are hard coded and renaming will cause your Mod not to work.<br />
+<br />
+<span class="title">String Table:</span><br />
+Tiberium Wars, Red Alert 3, and Tiberium Twilight support a file called mod.str to store strings. This is a simple text file and only needed if you add or modify text in the game.<br />
+An example of an entry in the mod.str file:
+<pre>NAME:Orca
+"Orca Fighter"
+END</pre>
+<span class="important">Kane's Wrath does not support a mod.str file.</span> Therefor you have to extract and edit the <span class="important">cnc3.csf</span> located in:
+<pre>Kane's Wrath\Lang-[language]\1.2\patch2.big</pre>
+There are several csf editors available but it is recommended to check if it isn't outdated.
+		</div>
+	</div>
+</div>
+</body>
+</html>

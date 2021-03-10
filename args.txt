@@ -1,0 +1,1 @@
+-gameDefinition:"Kane's Wrath" -compile:"F:\KW10201\Data\static.xml" -out:"F:\KW10201\Data\built" -version:_666 -bps:"static_common_2.manifest,F:\OneDrive\C&C\WrathEd20120303\WrathEd\bin\Debug\Games\Kane's Wrath\static_2.manifest"
