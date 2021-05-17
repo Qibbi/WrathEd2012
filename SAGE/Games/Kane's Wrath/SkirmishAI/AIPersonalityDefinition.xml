@@ -2,21 +2,21 @@
 <AssetDefinition xmlns="uri:thundermods.net:SAGE:WrathEdXML:AssetDefinition">
 
 	<Asset
-	id="AITarget">
+		id="AITarget">
 		<Entry
-		id="TacticalAITarget"
-		AssetType="AITargetType"
-		IsAttribute="true" />
+			id="TacticalAITarget"
+			AssetType="AITargetType"
+			IsAttribute="true" />
 		<Entry
-		id="MaxTeamsPerTarget"
-		AssetType="SageInt"
-		IsAttribute="true"
-		Default="1" />
+			id="MaxTeamsPerTarget"
+			AssetType="SageInt"
+			IsAttribute="true"
+			Default="1" />
 		<Entry
-		id="UpdateTime"
-		AssetType="Time"
-		IsAttribute="true"
-		Default="1s" />
+			id="UpdateTime"
+			AssetType="Time"
+			IsAttribute="true"
+			Default="1s" />
 	</Asset>
 
 	<Asset

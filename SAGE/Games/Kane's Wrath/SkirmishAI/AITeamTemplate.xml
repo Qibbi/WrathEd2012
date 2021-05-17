@@ -32,7 +32,7 @@
 			AssetType="SageInt"
 			IsAttribute="true"
 			Default="1" />
-		<Entry
+		<EntryRelocation
 			id="MaxUnits"
 			AssetType="SageInt"
 			IsAttribute="true" />
