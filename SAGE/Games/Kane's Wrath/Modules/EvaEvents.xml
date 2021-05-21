@@ -42,7 +42,7 @@
 			Default="200" />
 		<Entry
 			id="EvaEventSecondDamageFarFromFirstTimeoutMS"
-			AssetType="SageUnsignedInt"
+			AssetType="DurationUnsignedInt"
 			IsAttribute="true"
 			Default="31000" />
 		<EntryRelocation

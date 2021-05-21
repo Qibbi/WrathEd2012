@@ -32,6 +32,7 @@ namespace SAGE.Compiler
         private const string SageUnsignedShort = "SageUnsignedShort";
         private const string Time = "Time";
         private const string Velocity = "Velocity";
+        private const string DurationUnsignedInt = "DurationUnsignedInt";
 
         static AssetCompiler()
         {
@@ -341,6 +342,15 @@ namespace SAGE.Compiler
                             attribute.Value += (FileHelper.GetFloat(binPosition, bin) * Types.Constants.LOGICFRAMES_PER_SECONDS_REAL).ToString();
                             binPosition += 4;
                             break;
+                        case DurationUnsignedInt:
+                            if (entry.Default != null)
+                            {
+                                defaultValue = new SAGE.Types.DurationUnsignedInt(entry.Default).Value.ToString();
+                            }
+                            typeDefaultValue = SAGE.Types.DurationUnsignedInt.DefaultValue;
+                            attribute.Value += (FileHelper.GetUInt(binPosition, bin) * Types.Constants.MSEC_PER_LOGICFRAMES_REAL).ToString();
+                            binPosition += 4;
+                            break;
                     }
                     entryNode.Attributes.Append(attribute);
                 }
@@ -455,6 +465,10 @@ namespace SAGE.Compiler
                             typeDefaultValue = SAGE.Types.Velocity.DefaultValue;
                             attribute.Value += (FileHelper.GetFloat(relocationOffset, bin) * Types.Constants.LOGICFRAMES_PER_SECONDS_REAL).ToString();
                             break;
+                        case DurationUnsignedInt:
+                            typeDefaultValue = SAGE.Types.DurationUnsignedInt.DefaultValue;
+                            attribute.Value += (FileHelper.GetUInt(relocationOffset, bin) * Types.Constants.MSEC_PER_LOGICFRAMES_REAL).ToString();
+                            break;
                     }
                     entryNode.Attributes.Append(attribute);
                 }
@@ -517,6 +531,14 @@ namespace SAGE.Compiler
                                 break;
                             case Time:
                                 attribute.Value += FileHelper.GetFloat(listOffset, bin) + 's';
+                                listOffset += 4;
+                                break;
+                            case Velocity:
+                                attribute.Value += FileHelper.GetFloat(listOffset, bin);
+                                listOffset += 4;
+                                break;
+                            case DurationUnsignedInt:
+                                attribute.Value += FileHelper.GetUInt(listOffset, bin);
                                 listOffset += 4;
                                 break;
                         }
@@ -754,6 +776,10 @@ namespace SAGE.Compiler
                             element.InnerXml = (FileHelper.GetFloat(binPosition, bin) * Types.Constants.LOGICFRAMES_PER_SECONDS_REAL).ToString();
                             binPosition += 4;
                             break;
+                        case DurationUnsignedInt:
+                            element.InnerXml = (FileHelper.GetUInt(binPosition, bin) * Types.Constants.MSEC_PER_LOGICFRAMES_REAL).ToString();
+                            binPosition += 4;
+                            break;
                     }
                 }
                 else if (entryType == typeof(EntryRelocationType))
@@ -868,6 +894,10 @@ namespace SAGE.Compiler
                         case Velocity:
                             typeDefaultValue = SAGE.Types.Velocity.DefaultValue;
                             element.InnerXml += (FileHelper.GetFloat(relocationOffset, bin) * Types.Constants.LOGICFRAMES_PER_SECONDS_REAL).ToString();
+                            break;
+                        case DurationUnsignedInt:
+                            typeDefaultValue = SAGE.Types.DurationUnsignedInt.DefaultValue;
+                            element.InnerXml += (FileHelper.GetUInt(relocationOffset, bin) * Types.Constants.MSEC_PER_LOGICFRAMES_REAL).ToString();
                             break;
                     }
                 }
@@ -991,6 +1021,10 @@ namespace SAGE.Compiler
                                 break;
                             case Velocity:
                                 element.InnerXml = (FileHelper.GetFloat(listOffset, bin) * Types.Constants.LOGICFRAMES_PER_SECONDS_REAL).ToString();
+                                listOffset += 4;
+                                break;
+                            case DurationUnsignedInt:
+                                element.InnerXml = (FileHelper.GetUInt(listOffset, bin) * Types.Constants.MSEC_PER_LOGICFRAMES_REAL).ToString();
                                 listOffset += 4;
                                 break;
                         }

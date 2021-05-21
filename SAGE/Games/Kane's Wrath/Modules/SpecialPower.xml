@@ -34,7 +34,7 @@
 			IsAttribute="true" />
 		<Entry
 			id="WeatherDuration"
-			AssetType="SageUnsignedInt"
+			AssetType="DurationUnsignedInt"
 			IsAttribute="true"
 			Default="0" />
 		<EntryList

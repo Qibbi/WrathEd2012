@@ -1691,7 +1691,7 @@
 			Default="10.0" />
 		<Entry
 			id="OcclusionDelay"
-			AssetType="SageUnsignedInt"
+			AssetType="DurationUnsignedInt"
 			IsAttribute="true"
 			Default="0" />
 		<Entry
