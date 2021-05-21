@@ -263,7 +263,7 @@
 			id="FaceTarget"
 			AssetType="SageBool"
 			IsAttribute="true"
-			Default="false" />
+			Default="true" />
 		<Entry
 			id="fill"
 			AssetType="Byte"

@@ -2222,6 +2222,117 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </None>
+    <None Include="Games\Kane%27s Wrath\InGameUISettings.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Games\Kane%27s Wrath\InGameUI\CommandButton.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Games\Kane%27s Wrath\InGameUI\DecalCloud.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Games\Kane%27s Wrath\InGameUI\DrawableCaption.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Games\Kane%27s Wrath\InGameUI\ExitContainerButton.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Games\Kane%27s Wrath\InGameUI\FixedButtonHelp.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Games\Kane%27s Wrath\InGameUI\FloatingText.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Games\Kane%27s Wrath\InGameUI\FontDesc.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Games\Kane%27s Wrath\InGameUI\Message.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Games\Kane%27s Wrath\InGameUI\MilitaryCaption.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Games\Kane%27s Wrath\InGameUI\ObjectivePresentation.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Games\Kane%27s Wrath\InGameUI\SimpleHelpTemplate.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Games\Kane%27s Wrath\InGameUI\Subtitle.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Games\Kane%27s Wrath\InGameUI\Timer.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Games\Kane%27s Wrath\InGameUI\UIComponentAptJoypad.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Games\Kane%27s Wrath\InGameUI\UIComponentAptMediator.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Games\Kane%27s Wrath\InGameUI\UIComponentCheats.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Games\Kane%27s Wrath\InGameUI\UIComponentCommandBar.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Games\Kane%27s Wrath\InGameUI\UIComponentCursor.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Games\Kane%27s Wrath\InGameUI\UIComponentFormation.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Games\Kane%27s Wrath\InGameUI\UIComponentGameViewJoypad.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Games\Kane%27s Wrath\InGameUI\UIComponentInGameShowHide.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Games\Kane%27s Wrath\InGameUI\UIComponentInGameText.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Games\Kane%27s Wrath\InGameUI\UIComponentInputBridge.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Games\Kane%27s Wrath\InGameUI\UIComponentMinimap.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Games\Kane%27s Wrath\InGameUI\UIComponentObjectAction.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Games\Kane%27s Wrath\InGameUI\UIComponentObjectives.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Games\Kane%27s Wrath\InGameUI\UIComponentObjectSelector.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Games\Kane%27s Wrath\InGameUI\UIComponentPause.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Games\Kane%27s Wrath\InGameUI\UIComponentSound.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Games\Kane%27s Wrath\InGameUI\UIComponentSpecialPowers.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Games\Kane%27s Wrath\InGameUI\UIComponentVictoryDefeat.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Games\Kane%27s Wrath\InGameUI\UIFixedElementId.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Games\Kane%27s Wrath\InGameUI\UISUDSElement.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Games\Kane%27s Wrath\SkirmishAI\AIPersonalityDefinition.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Games\Kane%27s Wrath\SkirmishAI\AssetTypeArmyDefinition.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Games\Kane%27s Wrath\SkirmishAI\AssetTypeTargetHeuristics.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <Content Include="Games\Tiberium Wars\Includes\Base.xml" />
     <None Include="Games\Tiberium Wars\Includes\ObjectSound.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
