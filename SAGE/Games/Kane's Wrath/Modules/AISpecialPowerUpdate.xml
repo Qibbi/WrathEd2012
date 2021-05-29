@@ -75,7 +75,7 @@
 			id="RandomizeTargetLocation"
 			AssetType="SageBool"
 			IsAttribute="true"
-			Default="true" />
+			Default="false" />
 		<Entry
 			id="fill"
 			AssetType="Byte"

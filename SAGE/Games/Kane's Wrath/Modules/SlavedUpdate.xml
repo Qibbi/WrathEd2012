@@ -83,12 +83,12 @@
 			Default="0" />
 		<Entry
 			id="MinWeldFrames"
-			AssetType="SageReal"
+			AssetType="SageInt"
 			IsAttribute="true"
 			Default="0" />
 		<Entry
 			id="MaxWeldFrames"
-			AssetType="SageReal"
+			AssetType="SageInt"
 			IsAttribute="true"
 			Default="0" />
 		<EntryReference

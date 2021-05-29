@@ -106,6 +106,10 @@
 			id="IsStreamedOnXenon"
 			AssetType="SageBool"
 			IsAttribute="true" />
+		<Entry
+			id="fill"
+			AssetType="Byte"
+			IsVoid="true" />
 		<Runtime>
 			<Entry
 				id="SubtitleStringName"

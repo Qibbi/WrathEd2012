@@ -454,8 +454,7 @@
 		<Entry
 			id="ForbiddenWeaponSets"
 			AssetType="WeaponSetBitFlags"
-			IsAttribute="true"
-			Default="" />
+			IsAttribute="true" />
 		<Entry
 			id="ForbiddenStatus"
 			AssetType="ObjectStatusBitFlags"

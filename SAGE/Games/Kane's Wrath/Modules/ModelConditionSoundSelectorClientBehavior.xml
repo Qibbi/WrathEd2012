@@ -11,7 +11,7 @@
 			id="ExcludedFlags"
 			AssetType="ModelConditionBitFlags"
 			IsAttribute="true" />
-		<Entry
+		<EntryRelocation
 			id="VoicePriorityOverride"
 			AssetType="SageInt"
 			IsAttribute="true" />

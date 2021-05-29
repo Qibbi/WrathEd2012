@@ -62,6 +62,11 @@
 			IsAttribute="true"
 			IsRequired="true" />
 		<Entry
+			id="AptTokenMoreInfo"
+			AssetType="String"
+			IsAttribute="true"
+			IsRequired="true" />
+		<Entry
 			id="ProductionTextConstruction"
 			AssetType="String"
 			IsAttribute="true"

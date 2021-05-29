@@ -69,6 +69,34 @@
 	</Asset>
 
 	<Asset
+		id="RealRange">
+		<Entry
+			id="Low"
+			AssetType="SageReal"
+			IsAttribute="true"
+			IsRequired="true" />
+		<Entry
+			id="High"
+			AssetType="SageReal"
+			IsAttribute="true"
+			IsRequired="true" />
+	</Asset>
+	
+	<Asset
+		id="IntRange">
+		<Entry
+			id="Low"
+			AssetType="SageInt"
+			IsAttribute="true"
+			IsRequired="true" />
+		<Entry 
+			id="High"
+			AssetType="SageInt"
+			IsAttribute="true"
+			IsRequired="true" />
+	</Asset>
+
+	<Asset
 		id="Coord2D">
 		<Entry
 			id="x"
@@ -189,16 +217,24 @@
 			id="base"
 			AssetType="RandomVariable" />
 	</Asset>
-	
+
+	<Asset
+		id="ReplaceTexture">
+		<EntryReference
+			id="Original"
+			AssetType="Texture"
+			IsAttribute="true"/>
+		<EntryReference
+			id="New"
+			AssetType="Texture"
+			IsAttribute="true"/>
+	</Asset>
+
 	<Asset
 		id="AudioEventInfoRef">
 		<EntryReference
 			id="BaseAudioEventInfo"
 			AssetType="BaseAudioEventInfo" />
-	</Asset>
-	
-	<Asset
-		id="AudioEventInfoRefList">
 	</Asset>
 
 	<Asset
@@ -223,50 +259,10 @@
 	</Asset>
 
 	<Asset
-		id="ReplaceTexture">
-		<EntryReference
-			id="Original"
-			AssetType="Texture"
-			IsAttribute="true" />
-		<EntryReference
-			id="New"
-			AssetType="Texture"
-			IsAttribute="true" />
-	</Asset>
-
-	<Asset
 		id="StringHash">
 		<EntryPoid
 			id="StringHash"
 			IsUpperCase="true" />
-	</Asset>
-
-	<Asset
-		id="RealRange">
-		<Entry
-			id="Low"
-			AssetType="SageReal"
-			IsAttribute="true"
-			IsRequired="true" />
-		<Entry
-			id="High"
-			AssetType="SageReal"
-			IsAttribute="true"
-			IsRequired="true" />
-	</Asset>
-	
-	<Asset
-		id="IntRange">
-		<Entry
-			id="Low"
-			AssetType="SageInt"
-			IsAttribute="true"
-			IsRequired="true" />
-		<Entry 
-			id="High"
-			AssetType="SageInt"
-			IsAttribute="true"
-			IsRequired="true" />
 	</Asset>
 
 </AssetDefinition>

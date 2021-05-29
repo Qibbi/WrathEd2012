@@ -310,6 +310,10 @@
 			AssetType="SageBool"
 			IsAttribute="true"
 			Default="false" />
+		<Entry
+			id="fill"
+			AssetType="Byte"
+			IsVoid="true" />
 	</GameAsset>
 
 </AssetDefinition>

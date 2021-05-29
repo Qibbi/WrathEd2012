@@ -576,18 +576,6 @@
 			id="base"
 			AssetType="AIStateHeuristic" />
 	</Asset>
-	
-	<Asset
-		id="AIStateLinearCombinationHeuristic">
-		<EntryInheritance
-			id="base"
-			AssetType="AIStateHeuristic" />
-		<EntryList
-			id="WeightedHeuristic"
-			MinLength="2"
-			MaxLength="0"
-			AssetType="WeightedHeuristicType" />
-	</Asset>
 
 	<Asset
 		id="WeightedHeuristicType">
@@ -596,15 +584,8 @@
 			AssetType="SageReal"
 			Default="0.5"
 			IsAttribute="true"/>
-		<Entry
-			id="Heuristic"
-			AssetType="WeightedHeuristicList" />
-	</Asset>
-
-	<Asset
-		id="WeightedHeuristicList">
 		<EntryChoice
-			id="WeightedHeuristicList"
+			id="Heuristic"
 			MinLength="1"
 			MaxLength="1">
 			<Entry
@@ -650,19 +631,24 @@
 	</Asset>
 
 	<Asset
+		id="AIStateLinearCombinationHeuristic">
+		<EntryInheritance
+			id="base"
+			AssetType="AIStateHeuristic" />
+		<EntryList
+			id="WeightedHeuristic"
+			MinLength="2"
+			MaxLength="0"
+			AssetType="WeightedHeuristicType" />
+	</Asset>
+
+	<Asset
 		id="AIStateDefinition">
 		<EntryInheritance
 			id="base"
 			AssetType="BaseAssetType" />
-		<Entry
-			id="Heuristic"
-			AssetType="HeuristicList" />
-	</Asset>
-
-	<Asset
-		id="HeuristicList">
 		<EntryChoice
-			id="HeuristicList"
+			id="Heuristic"
 			MinLength="1"
 			MaxLength="0">
 			<Entry
@@ -852,9 +838,7 @@
 			AssetType="AIStateDefinition" />
 		<Entry
 			id="Budget"
-			AssetType="AIBankBudget"
-			MinLength="1"
-			MaxLength="1" />
+			AssetType="AIBankBudget" />
 	</GameAsset>
 
 	<Asset

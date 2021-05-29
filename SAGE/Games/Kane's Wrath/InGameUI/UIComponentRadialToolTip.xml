@@ -2,18 +2,10 @@
 <AssetDefinition xmlns="uri:thundermods.net:SAGE:WrathEdXML:AssetDefinition">
 
 	<Asset
-		id="UIComponentVictoryDefeat">
+		id="UIComponentRadialToolTip">
 		<EntryInheritance
 			id="base"
 			AssetType="UIBaseComponent" />
-		<Entry
-			id="PostEndGameMusic"
-			AssetType="String" />
-		<EntryList
-			id="EndGameMusicAlias"
-			AssetType="String"
-			MinLength="0"
-			MaxLength="0" />
 	</Asset>
 
 </AssetDefinition>

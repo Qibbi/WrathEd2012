@@ -343,6 +343,10 @@
 			id="UsageIndex"
 			AssetType="Byte"
 			IsAttribute="true" />
+		<Entry
+			id="fill"
+			AssetType="Byte"
+			IsVoid="true" />
 	</Asset>
 
 	<Asset
@@ -372,6 +376,10 @@
 			AssetType="SageUnsignedShort"
 			MinLength="1"
 			MaxLength="0" />
+		<Entry
+			id="fill"
+			AssetType="Byte"
+			IsVoid="true" />
 	</Asset>
 
 	<Asset

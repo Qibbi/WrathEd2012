@@ -16,11 +16,6 @@
 			AssetType="SageUnsignedInt"
 			IsAttribute="true"
 			Default="0" />
-		<Entry
-			id="FreeLifeHealthPercent"
-			AssetType="Percentage"
-			IsAttribute="true"
-			Default="0" />
 		<EntryReference
 			id="FreeLifePrerequisiteUpgrade"
 			AssetType="UpgradeTemplate"
