@@ -280,6 +280,7 @@ namespace SAGE.Compiler
                     stream.SourceFiles.Add(assetEntry.SourceFileNameOffset, asset.SourceFile);
                     sourceFileNameBufferSize += (uint)(asset.SourceFile.Length + 1);
                 }
+                assetEntry.IsTokenized = asset.IsTokenized;
                 if (asset.Binary != null)
                 {
                     List<byte[]> binary = new List<byte[]>();
@@ -637,7 +638,8 @@ namespace SAGE.Compiler
                                 worldbuilderStream.AssetEntries[idx].TypeHash,
                                 typeName[1],
                                 worldbuilderStream.AssetEntries[idx].InstanceHash,
-                                worldbuilderStream.SourceFiles[worldbuilderStream.AssetEntries[idx].SourceFileNameOffset]);
+                                worldbuilderStream.SourceFiles[worldbuilderStream.AssetEntries[idx].SourceFileNameOffset],
+                                worldbuilderStream.AssetEntries[idx].IsTokenized);
                             for (uint idy = 0; idy < worldbuilderStream.AssetEntries[idx].AssetReferenceCount; ++idy)
                             {
                                 Stream.AssetReference reference = worldbuilderStream.AssetReferences[(int)((worldbuilderStream.AssetEntries[idx].AssetReferenceOffset >> 3) + idy)];
@@ -685,7 +687,8 @@ namespace SAGE.Compiler
                             baseStream.AssetEntries[idx].TypeHash,
                             typeName[1],
                             baseStream.AssetEntries[idx].InstanceHash,
-                            baseStream.SourceFiles[baseStream.AssetEntries[idx].SourceFileNameOffset]);
+                            baseStream.SourceFiles[baseStream.AssetEntries[idx].SourceFileNameOffset],
+                            baseStream.AssetEntries[idx].IsTokenized);
                         for (uint idy = 0; idy < baseStream.AssetEntries[idx].AssetReferenceCount; ++idy)
                         {
                             Stream.AssetReference reference = baseStream.AssetReferences[(int)((baseStream.AssetEntries[idx].AssetReferenceOffset >> 3) + idy)];
@@ -862,6 +865,7 @@ namespace SAGE.Compiler
                     stream.SourceFiles.Add(assetEntry.SourceFileNameOffset, asset.SourceFile);
                     sourceFileNameBufferSize += (uint)(asset.SourceFile.Length + 1);
                 }
+                assetEntry.IsTokenized = asset.IsTokenized;
                 if (asset.Binary != null)
                 {
                     List<byte[]> binary = new List<byte[]>();
@@ -989,7 +993,7 @@ namespace SAGE.Compiler
                 }
             }
             stream.Header.AssetCount = (uint)assetList.Count;
-            stream.Header.BinaryDataSize = binaryDataSize;
+            stream.Header.BinaryDataSize += binaryDataSize;
             stream.Header.AssetReferenceBufferSize = assetReferenceOffset;
             stream.Header.AssetNameBufferSize = assetNameBufferSize;
             stream.Header.SourceFileNameBufferSize = sourceFileNameBufferSize;
