@@ -86,6 +86,7 @@
     <Compile Include="StringHasher.cs" />
     <Compile Include="Types\Angle.cs" />
     <Compile Include="Types\Constants.cs" />
+    <Compile Include="Types\DurationUnsignedInt.cs" />
     <Compile Include="Types\Percentage.cs" />
     <Compile Include="Types\SageBase.cs" />
     <Compile Include="Types\SageBool.cs" />

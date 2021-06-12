@@ -17,7 +17,7 @@
 			Default="-1.0" />
 		<Entry
 			id="InitialDelay"
-			AssetType="SageUnsignedInt"
+			AssetType="DurationUnsignedInt"
 			IsAttribute="true"
 			Default="0" />
 		<Entry

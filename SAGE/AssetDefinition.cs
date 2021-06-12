@@ -20,6 +20,7 @@ namespace SAGE
 		protected const string SageUnsignedShort = "SageUnsignedShort";
 		protected const string Time = "Time";
 		protected const string Velocity = "Velocity";
+		protected const string DurationUnsignedInt = "DurationUnsignedInt";
 
 		public string id { get; protected set; }
 		public BaseAssetType Superclass { get; set; }
@@ -275,6 +276,7 @@ namespace SAGE
 								case SageInt:
 								case SageReal:
 								case SageUnsignedInt:
+								case DurationUnsignedInt:
 								case Time:
 								case Velocity:
 									length += 4;
@@ -509,6 +511,7 @@ namespace SAGE
 							case SageInt:
 							case SageReal:
 							case SageUnsignedInt:
+							case DurationUnsignedInt:
 							case Time:
 							case Velocity:
 								length += 4;
