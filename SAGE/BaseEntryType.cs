@@ -17,6 +17,7 @@ namespace SAGE
 		protected const string SageUnsignedShort = "SageUnsignedShort";
 		protected const string Time = "Time";
 		protected const string Velocity = "Velocity";
+		protected const string DurationUnsignedInt = "DurationUnsignedInt";
 
 		protected const string RequiredNotFoundAttribute = "Critical Error: The required attribute {0} was not found in:\n{1}";
 		protected const string RequiredNotFoundElement = "Critical Error: The required element {0} was not found in:\n{1}";

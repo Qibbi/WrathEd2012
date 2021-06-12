@@ -198,6 +198,16 @@ namespace SAGE
 									subPosition += 4;
 								}
 								break;
+							case DurationUnsignedInt:
+								assetList = new BinaryAsset(values.Length * 4);
+								asset.SubAssets.Add(position, assetList);
+								foreach (string value in values)
+								{
+									Types.DurationUnsignedInt durationUnsignedInt = new Types.DurationUnsignedInt(value);
+									FileHelper.SetUInt(durationUnsignedInt.Value, subPosition, assetList.Content);
+									subPosition += 4;
+								}
+								break;
 							default:
 								foreach (BaseAssetType listBaseAsset in game.Assets.AssetTypes)
 								{
@@ -416,6 +426,17 @@ namespace SAGE
 								string value = nodes[idx].InnerText;
 								Types.Velocity velocity = new Types.Velocity(value);
 								FileHelper.SetFloat(velocity.Value, subPosition, assetList.Content);
+								subPosition += 4;
+							}
+							break;
+						case DurationUnsignedInt:
+							assetList = new BinaryAsset(nodes.Count * 4);
+							asset.SubAssets.Add(position, assetList);
+							for (int idx = 0; idx < nodes.Count; ++idx)
+							{
+								string value = nodes[idx].InnerText;
+								Types.DurationUnsignedInt durationUnsignedInt = new Types.DurationUnsignedInt(value);
+								FileHelper.SetUInt(durationUnsignedInt.Value, subPosition, assetList.Content);
 								subPosition += 4;
 							}
 							break;

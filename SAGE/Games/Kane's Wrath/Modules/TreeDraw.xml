@@ -64,7 +64,7 @@
 			IsAttribute="true" />
 		<Entry
 			id="SinkTime"
-			AssetType="SageUnsignedInt"
+			AssetType="DurationUnsignedInt"
 			IsAttribute="true" />
 		<EntryReference
 			id="MorphTree"
@@ -72,7 +72,7 @@
 			IsAttribute="true" />
 		<Entry
 			id="MorphTime"
-			AssetType="SageUnsignedInt"
+			AssetType="DurationUnsignedInt"
 			IsAttribute="true" />
 		<EntryReference
 			id="MorphFX"
