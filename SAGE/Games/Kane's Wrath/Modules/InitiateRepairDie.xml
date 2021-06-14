@@ -22,7 +22,7 @@
 			Default="0s" />
 		<EntryReference
 			id="MasterDeadDieFX"
-			AssetType="FXListRef"
+			AssetType="FXList"
 			IsAttribute="true" />
 		<Entry
 			id="Options"

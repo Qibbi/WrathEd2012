@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<AssetDefinition xmlns="uri:thundermods.net:SAGE:WrathEdXML:AssetDefinition">
+
+	<EnumAsset
+		id="MetaGameDialogResult"
+		IsStartingNegative="true">
+		<Entry>INVALID</Entry>
+		<Entry>OPENED</Entry>
+		<Entry>CANCELED</Entry>
+		<Entry>CONFIRMED</Entry>
+	</EnumAsset>
+
+	<EnumAsset
+		id="MetaGameDialog">
+		<Entry>BUILD_STRIKEFORCE</Entry>
+		<Entry>BUILD_STRATEGIC_BUILDING</Entry>
+		<Entry>BATTLE_RESOLUTION</Entry>
+		<Entry>BATTLE_RESULTS</Entry>
+	</EnumAsset>
+
+</AssetDefinition>

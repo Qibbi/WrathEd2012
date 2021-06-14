@@ -13,6 +13,8 @@
 		<Entry>HUGE_TWO_LEGS</Entry>
 		<Entry>TREADS</Entry>
 		<Entry>SHIP</Entry>
+		<Entry>MECHAPEDE</Entry>
+		<Entry>MECHAPEDE_HORDE</Entry>
 		<Entry>OTHER</Entry>
 	</EnumAsset>
 

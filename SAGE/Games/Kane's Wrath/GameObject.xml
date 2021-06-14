@@ -1,210 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <AssetDefinition xmlns="uri:thundermods.net:SAGE:WrathEdXML:AssetDefinition">
 
-	<EnumAsset
-		id="BuildCompletionType">
-		<Entry>INVALID</Entry>
-		<Entry>APPEARS_AT_RALLY_POINT</Entry>
-		<Entry>PLACED_BY_PLAYER</Entry>
-	</EnumAsset>
-
-	<EnumAsset
-		id="BuildPlacementType">
-		<Entry>INVALID</Entry>
-		<Entry>MAIN_STRUCTURE</Entry>
-		<Entry>OTHER_STRUCTURE</Entry>
-		<Entry>TIBERIUM_FIELD</Entry>
-		<Entry>META_STRIKEFORCE</Entry>
-	</EnumAsset>
-
-	<FlagsAsset
-		id="BuildPlacementTypeBitFlags"
-		BaseEnum="BuildPlacementType" />
-
-	<EnumAsset
-		id="BuildableStatus">
-		<Entry>YES</Entry>
-		<Entry>IGNORE_PREREQUISITES</Entry>
-		<Entry>NO</Entry>
-		<Entry>ONLY_BY_AI</Entry>
-	</EnumAsset>
-
-	<Asset
-		id="ArmorTemplateSet">
-		<EntryReference
-			id="Armor"
-			AssetType="ArmorTemplate"
-			IsAttribute="true"
-			IsRequired="true" />
-		<EntryReference
-			id="DamageFX"
-			AssetType="DamageFX"
-			IsAttribute="true" />
-		<Entry
-			id="Conditions"
-			AssetType="ArmorSetBitFlags"
-			IsAttribute="true" />
-	</Asset>
-
-	<Asset
-		id="LocomotorSet">
-		<Entry
-			id="Speed"
-			AssetType="SageReal"
-			IsAttribute="true" />
-		<Entry
-			id="Condition"
-			AssetType="LocomotorSetType"
-			IsAttribute="true" />
-		<EntryReference
-			id="Locomotor"
-			AssetType="LocomotorTemplate"
-			IsAttribute="true" />
-	</Asset>
-
-	<Asset
-		id="Flammability">
-		<Entry
-			id="Fuel"
-			AssetType="SageUnsignedInt"
-			IsAttribute="true"
-			Default="0" />
-		<Entry
-			id="MaxBurnRate"
-			AssetType="SageUnsignedInt"
-			IsAttribute="true"
-			Default="0" />
-		<Entry
-			id="Decay"
-			AssetType="SageUnsignedInt"
-			IsAttribute="true"
-			Default="0" />
-		<Entry
-			id="Resistance"
-			AssetType="SageUnsignedInt"
-			IsAttribute="true"
-			Default="0" />
-	</Asset>
-
-	<EnumAsset
-		id="SkirmishAIBaseLocation">
-		<Entry>FRONT</Entry>
-		<Entry>SIDE</Entry>
-		<Entry>BACK</Entry>
-		<Entry>SPREAD</Entry>
-		<Entry>CENTER</Entry>
-		<Entry>TIBERIUM</Entry>
-		<Entry>HOMEBASE</Entry>
-	</EnumAsset>
-
-	<Asset
-		id="SkirmishAIInformation">
-		<Entry
-			id="BaseBuildingLocation"
-			AssetType="SkirmishAIBaseLocation"
-			IsAttribute="true"
-			Default="0" />
-		<EntryRelocation
-			id="ConquerMetricsOverrideDPS"
-			AssetType="SageReal"
-			IsAttribute="true" />
-		<Entry
-			id="ConquerMetricsOverrideDamageType"
-			AssetType="DamageType"
-			IsAttribute="true"
-			Default="UNDEFINED" />
-		<Entry
-			id="ConquerMetricsOverrideAntiMask"
-			AssetType="WeaponAntiBitFlags"
-			IsAttribute="true"
-			Default="ANTI_GROUND" />
-		<Entry
-			id="UnitBuilderStandardCombatUnit"
-			AssetType="SageBool"
-			IsAttribute="true"
-			Default="false" />
-		<Entry
-			id="fill"
-			AssetType="Byte"
-			IsVoid="true" />
-	</Asset>
-
-	<Asset
-		id="DrawModules">
-		<EntryChoice
-			id="DrawModules"
-			MinLength="0"
-			MaxLength="0">
-			<Entry
-				id="FloorDraw"
-				AssetType="W3DFloorDrawModuleData" />
-			<Entry
-				id="ScriptedModelDraw"
-				AssetType="W3DScriptedModelDrawModuleData" />
-			<Entry
-				id="TankDraw"
-				AssetType="W3DTankDrawModuleData" />
-			<Entry
-				id="TruckDraw"
-				AssetType="W3DTruckDrawModuleData" />
-			<Entry
-				id="PropDraw"
-				AssetType="W3DPropDrawModuleData" />
-			<Entry
-				id="DebrisDraw"
-				AssetType="W3DDebrisDrawModuleData" />
-			<Entry
-				id="TreeDraw"
-				AssetType="W3DTreeDrawModuleData" />
-			<Entry
-				id="BuffDraw"
-				AssetType="W3DBuffDrawModuleData" />
-			<Entry
-				id="LaserDraw"
-				AssetType="W3DLaserDrawModuleData" />
-			<Entry
-				id="StreamDraw"
-				AssetType="W3DStreamDrawModuleData" />
-			<Entry
-				id="QuadrupedDraw"
-				AssetType="W3DQuadrupedDrawModuleData" />
-			<Entry
-				id="StreakDraw"
-				AssetType="W3DStreakDrawModuleData" />
-			<Entry
-				id="HordeModelDraw"
-				AssetType="W3DHordeModelDrawModuleData" />
-			<Entry
-				id="TracerModelDraw"
-				AssetType="W3DTracerDrawModuleData" />
-			<Entry
-				id="SpotlightDraw"
-				AssetType="W3DSpotlightDrawModuleData" />
-			<!--No original entries, names are from Generals and Battle for Middle Earth 2-->
-			<Entry
-				id="DefaultDraw"
-				AssetType="W3DDefaultDrawModuleData" />
-			<Entry
-				id="LightDraw"
-				AssetType="W3DLightDrawModuleData" />
-			<Entry
-				id="ProjectileStreamDraw"
-				AssetType="W3DProjectileStreamDrawModuleData" />
-			<Entry
-				id="SupplyDraw"
-				AssetType="W3DSupplyDrawModuleData" />
-			<Entry
-				id="BoatWakeModelDraw"
-				AssetType="W3DBoatWakeModelDrawModuleData" />
-			<Entry
-				id="RopeDraw"
-				AssetType="W3DRopeDrawModuleData" />
-			<Entry
-				id="TornadoDraw"
-				AssetType="W3DTornadoDrawModuleData" />
-		</EntryChoice>
-	</Asset>
-
 	<Asset
 		id="BehaviorModules">
 		<EntryChoice
@@ -1298,60 +1094,6 @@
 	</Asset>
 
 	<Asset
-		id="AutoResolveArmor">
-		<EntryReference
-			id="Armor"
-			AssetType="ArmorTemplate"
-			IsAttribute="true" />
-		<EntryList
-			id="RequiredUpgrade"
-			AssetType="UpgradeTemplateWeakRef"
-			MinLength="0"
-			MaxLength="0" />
-		<EntryList
-			id="ExcludedUpgrade"
-			AssetType="UpgradeTemplateWeakRef"
-			MinLength="0"
-			MaxLength="0" />
-	</Asset>
-
-	<Asset
-		id="AutoResolveWeapon">
-		<EntryReference
-			id="Weapon"
-			AssetType="WeaponTemplate"
-			IsAttribute="true" />
-		<EntryList
-			id="RequiredUpgrade"
-			AssetType="UpgradeTemplateWeakRef"
-			MinLength="0"
-			MaxLength="0" />
-		<EntryList
-			id="ExcludedUpgrade"
-			AssetType="UpgradeTemplateWeakRef"
-			MinLength="0"
-			MaxLength="0" />
-	</Asset>
-
-	<Asset
-		id="FormationPreviewDecal">
-		<Entry
-			id="Texture"
-			AssetType="String"
-			IsAttribute="true" />
-		<Entry
-			id="Width"
-			AssetType="SageReal"
-			IsAttribute="true"
-			Default="50.0" />
-		<Entry
-			id="Height"
-			AssetType="SageReal"
-			IsAttribute="true"
-			Default="50.0" />
-	</Asset>
-
-	<Asset
 		id="AutoResolveInfo">
 		<Entry
 			id="AutoResolveUnitType"
@@ -1378,126 +1120,33 @@
 			IsAttribute="true" />
 	</Asset>
 
-	<Asset
-		id="VisionInfo">
-		<Entry
-			id="VisionRange"
-			AssetType="SageReal"
-			IsAttribute="true"
-			Default="0.00" />
-		<Entry
-			id="ShroudClearingRange"
-			AssetType="SageReal"
-			IsAttribute="true"
-			Default="0.0" />
-		<Entry
-			id="VisionSide"
-			AssetType="Percentage"
-			IsAttribute="true"
-			Default="100" />
-		<Entry
-			id="VisionRear"
-			AssetType="Percentage"
-			IsAttribute="true"
-			Default="100" />
-		<Entry
-			id="VisionBonusTestRadius"
-			AssetType="SageReal"
-			IsAttribute="true"
-			Default="100" />
-		<Entry
-			id="VisionBonusTestSegments"
-			AssetType="SageUnsignedInt"
-			IsAttribute="true"
-			Default="8" />
-		<Entry
-			id="VisionBonusPercentPerFoot"
-			AssetType="Percentage"
-			IsAttribute="true"
-			Default="0" />
-		<Entry
-			id="MaxVisionBonusPercent"
-			AssetType="Percentage"
-			IsAttribute="true"
-			Default="50" />
-		<Entry
-			id="MinVisionBonusPercent"
-			AssetType="Percentage"
-			IsAttribute="true"
-			Default="-50" />
-	</Asset>
+	<EnumAsset
+		id="BuildPlacementType">
+		<Entry>INVALID</Entry>
+		<Entry>MAIN_STRUCTURE</Entry>
+		<Entry>OTHER_STRUCTURE</Entry>
+		<Entry>TIBERIUM_FIELD</Entry>
+		<Entry>META_STRIKEFORCE</Entry>
+	</EnumAsset>
 
-	<Asset
-		id="CrusherInfo">
-		<Entry
-			id="CrushKnockback"
-			AssetType="SageInt"
-			IsAttribute="true"
-			Default="0" />
-		<Entry
-			id="CrushZFactor"
-			AssetType="SageReal"
-			IsAttribute="true"
-			Default="1" />
-		<Entry
-			id="MinCrushVelocityPercent"
-			AssetType="Percentage"
-			IsAttribute="true"
-			Default="1" />
-		<Entry
-			id="CrushDecelerationPercent"
-			AssetType="Percentage"
-			IsAttribute="true"
-			Default="0" />
-		<EntryReference
-			id="CrushWeapon"
-			AssetType="WeaponTemplate"
-			IsAttribute="true" />
-		<EntryReference
-			id="CrushRevengeWeapon"
-			AssetType="WeaponTemplate"
-			IsAttribute="true" />
-		<Entry
-			id="CrusherLevel"
-			AssetType="Byte"
-			IsAttribute="true"
-			Default="0" />
-		<Entry
-			id="CrushableLevel"
-			AssetType="Byte"
-			IsAttribute="true"
-			Default="127" />
-		<Entry
-			id="MountedCrusherLevel"
-			AssetType="Byte"
-			IsAttribute="true"
-			Default="255" />
-		<Entry
-			id="MountedCrushableLevel"
-			AssetType="Byte"
-			IsAttribute="true"
-			Default="255" />
-		<Entry
-			id="CrushEqualLevelProps"
-			AssetType="SageBool"
-			IsAttribute="true"
-			Default="false" />
-		<Entry
-			id="UseCrushAttack"
-			AssetType="SageBool"
-			IsAttribute="true"
-			Default="true" />
-		<Entry
-			id="CrushOnlyWhileCharging"
-			AssetType="SageBool"
-			IsAttribute="true"
-			Default="false" />
-		<Entry
-			id="CrushAllies"
-			AssetType="SageBool"
-			IsAttribute="true"
-			Default="false" />
-	</Asset>
+	<EnumAsset
+		id="BuildableStatus">
+		<Entry>YES</Entry>
+		<Entry>IGNORE_PREREQUISITES</Entry>
+		<Entry>NO</Entry>
+		<Entry>ONLY_BY_AI</Entry>
+	</EnumAsset>
+
+	<EnumAsset
+		id="BuildCompletionType">
+		<Entry>INVALID</Entry>
+		<Entry>APPEARS_AT_RALLY_POINT</Entry>
+		<Entry>PLACED_BY_PLAYER</Entry>
+	</EnumAsset>
+
+	<FlagsAsset
+		id="BuildPlacementTypeBitFlags"
+		BaseEnum="BuildPlacementType" />
 
 	<Asset
 		id="ProjectedBuildabilityInfo">
@@ -2081,5 +1730,398 @@
 			AssetType="Byte"
 			IsVoid="true" />
 	</GameAsset>
+
+	<Asset
+		id="ArmorType">
+		<Entry
+			id="Conditions"
+			AssetType="String"
+			IsAttribute="true" />
+		<EntryReference
+			id="DamageFX"
+			AssetType="DamageFX"
+			IsAttribute="true" />
+	</Asset>
+
+	<Asset
+		id="ArmorTemplateSet">
+		<EntryReference
+			id="Armor"
+			AssetType="ArmorTemplate"
+			IsAttribute="true"
+			IsRequired="true" />
+		<EntryReference
+			id="DamageFX"
+			AssetType="DamageFX"
+			IsAttribute="true" />
+		<Entry
+			id="Conditions"
+			AssetType="ArmorSetBitFlags"
+			IsAttribute="true" />
+	</Asset>
+
+	<Asset
+		id="LocomotorSet">
+		<Entry
+			id="Speed"
+			AssetType="SageReal"
+			IsAttribute="true" />
+		<Entry
+			id="Condition"
+			AssetType="LocomotorSetType"
+			IsAttribute="true" />
+		<EntryReference
+			id="Locomotor"
+			AssetType="LocomotorTemplate"
+			IsAttribute="true" />
+	</Asset>
+
+	<Asset
+		id="Flammability">
+		<Entry
+			id="Fuel"
+			AssetType="SageUnsignedInt"
+			IsAttribute="true"
+			Default="0" />
+		<Entry
+			id="MaxBurnRate"
+			AssetType="SageUnsignedInt"
+			IsAttribute="true"
+			Default="0" />
+		<Entry
+			id="Decay"
+			AssetType="SageUnsignedInt"
+			IsAttribute="true"
+			Default="0" />
+		<Entry
+			id="Resistance"
+			AssetType="SageUnsignedInt"
+			IsAttribute="true"
+			Default="0" />
+	</Asset>
+
+	<EnumAsset
+		id="SkirmishAIBaseLocation">
+		<Entry>FRONT</Entry>
+		<Entry>SIDE</Entry>
+		<Entry>BACK</Entry>
+		<Entry>SPREAD</Entry>
+		<Entry>CENTER</Entry>
+		<Entry>TIBERIUM</Entry>
+		<Entry>HOMEBASE</Entry>
+	</EnumAsset>
+
+	<Asset
+		id="SkirmishAIInformation">
+		<Entry
+			id="BaseBuildingLocation"
+			AssetType="SkirmishAIBaseLocation"
+			IsAttribute="true"
+			Default="0" />
+		<EntryRelocation
+			id="ConquerMetricsOverrideDPS"
+			AssetType="SageReal"
+			IsAttribute="true" />
+		<Entry
+			id="ConquerMetricsOverrideDamageType"
+			AssetType="DamageType"
+			IsAttribute="true"
+			Default="UNDEFINED" />
+		<Entry
+			id="ConquerMetricsOverrideAntiMask"
+			AssetType="WeaponAntiBitFlags"
+			IsAttribute="true"
+			Default="ANTI_GROUND" />
+		<Entry
+			id="UnitBuilderStandardCombatUnit"
+			AssetType="SageBool"
+			IsAttribute="true"
+			Default="false" />
+		<Entry
+			id="fill"
+			AssetType="Byte"
+			IsVoid="true" />
+	</Asset>
+	
+	<Asset
+		id="ReplaceModule">
+	</Asset>
+
+	<Asset
+		id="InheritableModule">
+	</Asset>
+	
+	<Asset
+		id="AutoResolveWeapon">
+		<EntryReference
+			id="Weapon"
+			AssetType="WeaponTemplate"
+			IsAttribute="true" />
+		<EntryList
+			id="RequiredUpgrade"
+			AssetType="UpgradeTemplateWeakRef"
+			MinLength="0"
+			MaxLength="0" />
+		<EntryList
+			id="ExcludedUpgrade"
+			AssetType="UpgradeTemplateWeakRef"
+			MinLength="0"
+			MaxLength="0" />
+	</Asset>
+
+	<Asset
+		id="AutoResolveArmor">
+		<EntryReference
+			id="Armor"
+			AssetType="ArmorTemplate"
+			IsAttribute="true" />
+		<EntryList
+			id="RequiredUpgrade"
+			AssetType="UpgradeTemplateWeakRef"
+			MinLength="0"
+			MaxLength="0" />
+		<EntryList
+			id="ExcludedUpgrade"
+			AssetType="UpgradeTemplateWeakRef"
+			MinLength="0"
+			MaxLength="0" />
+	</Asset>
+
+	<Asset
+		id="AutoResolveWeapon">
+		<EntryReference
+			id="Weapon"
+			AssetType="WeaponTemplate"
+			IsAttribute="true" />
+		<EntryList
+			id="RequiredUpgrade"
+			AssetType="UpgradeTemplateWeakRef"
+			MinLength="0"
+			MaxLength="0" />
+		<EntryList
+			id="ExcludedUpgrade"
+			AssetType="UpgradeTemplateWeakRef"
+			MinLength="0"
+			MaxLength="0" />
+	</Asset>
+
+	<Asset
+		id="PerUnitFX">
+	</Asset>
+
+	<Asset
+		id="FormationPreviewDecal">
+		<Entry
+			id="Texture"
+			AssetType="String"
+			IsAttribute="true" />
+		<Entry
+			id="Width"
+			AssetType="SageReal"
+			IsAttribute="true"
+			Default="50.0" />
+		<Entry
+			id="Height"
+			AssetType="SageReal"
+			IsAttribute="true"
+			Default="50.0" />
+	</Asset>
+
+	<Asset
+		id="VisionInfo">
+		<Entry
+			id="VisionRange"
+			AssetType="SageReal"
+			IsAttribute="true"
+			Default="0.00" />
+		<Entry
+			id="ShroudClearingRange"
+			AssetType="SageReal"
+			IsAttribute="true"
+			Default="0.0" />
+		<Entry
+			id="VisionSide"
+			AssetType="Percentage"
+			IsAttribute="true"
+			Default="100" />
+		<Entry
+			id="VisionRear"
+			AssetType="Percentage"
+			IsAttribute="true"
+			Default="100" />
+		<Entry
+			id="VisionBonusTestRadius"
+			AssetType="SageReal"
+			IsAttribute="true"
+			Default="100" />
+		<Entry
+			id="VisionBonusTestSegments"
+			AssetType="SageUnsignedInt"
+			IsAttribute="true"
+			Default="8" />
+		<Entry
+			id="VisionBonusPercentPerFoot"
+			AssetType="Percentage"
+			IsAttribute="true"
+			Default="0" />
+		<Entry
+			id="MaxVisionBonusPercent"
+			AssetType="Percentage"
+			IsAttribute="true"
+			Default="50" />
+		<Entry
+			id="MinVisionBonusPercent"
+			AssetType="Percentage"
+			IsAttribute="true"
+			Default="-50" />
+	</Asset>
+
+	<Asset
+		id="CrusherInfo">
+		<Entry
+			id="CrushKnockback"
+			AssetType="SageInt"
+			IsAttribute="true"
+			Default="0" />
+		<Entry
+			id="CrushZFactor"
+			AssetType="SageReal"
+			IsAttribute="true"
+			Default="1" />
+		<Entry
+			id="MinCrushVelocityPercent"
+			AssetType="Percentage"
+			IsAttribute="true"
+			Default="1" />
+		<Entry
+			id="CrushDecelerationPercent"
+			AssetType="Percentage"
+			IsAttribute="true"
+			Default="0" />
+		<EntryReference
+			id="CrushWeapon"
+			AssetType="WeaponTemplate"
+			IsAttribute="true" />
+		<EntryReference
+			id="CrushRevengeWeapon"
+			AssetType="WeaponTemplate"
+			IsAttribute="true" />
+		<Entry
+			id="CrusherLevel"
+			AssetType="Byte"
+			IsAttribute="true"
+			Default="0" />
+		<Entry
+			id="CrushableLevel"
+			AssetType="Byte"
+			IsAttribute="true"
+			Default="127" />
+		<Entry
+			id="MountedCrusherLevel"
+			AssetType="Byte"
+			IsAttribute="true"
+			Default="255" />
+		<Entry
+			id="MountedCrushableLevel"
+			AssetType="Byte"
+			IsAttribute="true"
+			Default="255" />
+		<Entry
+			id="CrushEqualLevelProps"
+			AssetType="SageBool"
+			IsAttribute="true"
+			Default="false" />
+		<Entry
+			id="UseCrushAttack"
+			AssetType="SageBool"
+			IsAttribute="true"
+			Default="true" />
+		<Entry
+			id="CrushOnlyWhileCharging"
+			AssetType="SageBool"
+			IsAttribute="true"
+			Default="false" />
+		<Entry
+			id="CrushAllies"
+			AssetType="SageBool"
+			IsAttribute="true"
+			Default="false" />
+	</Asset>
+
+	<Asset
+		id="DrawModules">
+		<EntryChoice
+			id="DrawModules"
+			MinLength="0"
+			MaxLength="0">
+			<Entry
+				id="FloorDraw"
+				AssetType="W3DFloorDrawModuleData" />
+			<Entry
+				id="ScriptedModelDraw"
+				AssetType="W3DScriptedModelDrawModuleData" />
+			<Entry
+				id="TankDraw"
+				AssetType="W3DTankDrawModuleData" />
+			<Entry
+				id="TruckDraw"
+				AssetType="W3DTruckDrawModuleData" />
+			<Entry
+				id="PropDraw"
+				AssetType="W3DPropDrawModuleData" />
+			<Entry
+				id="DebrisDraw"
+				AssetType="W3DDebrisDrawModuleData" />
+			<Entry
+				id="TreeDraw"
+				AssetType="W3DTreeDrawModuleData" />
+			<Entry
+				id="BuffDraw"
+				AssetType="W3DBuffDrawModuleData" />
+			<Entry
+				id="LaserDraw"
+				AssetType="W3DLaserDrawModuleData" />
+			<Entry
+				id="StreamDraw"
+				AssetType="W3DStreamDrawModuleData" />
+			<Entry
+				id="QuadrupedDraw"
+				AssetType="W3DQuadrupedDrawModuleData" />
+			<Entry
+				id="StreakDraw"
+				AssetType="W3DStreakDrawModuleData" />
+			<Entry
+				id="HordeModelDraw"
+				AssetType="W3DHordeModelDrawModuleData" />
+			<Entry
+				id="TracerModelDraw"
+				AssetType="W3DTracerDrawModuleData" />
+			<Entry
+				id="SpotlightDraw"
+				AssetType="W3DSpotlightDrawModuleData" />
+			<!--No original entries, names are from Generals and Battle for Middle Earth 2-->
+			<Entry
+				id="DefaultDraw"
+				AssetType="W3DDefaultDrawModuleData" />
+			<Entry
+				id="LightDraw"
+				AssetType="W3DLightDrawModuleData" />
+			<Entry
+				id="ProjectileStreamDraw"
+				AssetType="W3DProjectileStreamDrawModuleData" />
+			<Entry
+				id="SupplyDraw"
+				AssetType="W3DSupplyDrawModuleData" />
+			<Entry
+				id="BoatWakeModelDraw"
+				AssetType="W3DBoatWakeModelDrawModuleData" />
+			<Entry
+				id="RopeDraw"
+				AssetType="W3DRopeDrawModuleData" />
+			<Entry
+				id="TornadoDraw"
+				AssetType="W3DTornadoDrawModuleData" />
+		</EntryChoice>
+	</Asset>
 
 </AssetDefinition>

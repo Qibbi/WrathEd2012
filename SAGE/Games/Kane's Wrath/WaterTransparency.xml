@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<AssetDefinition xmlns="uri:thundermods.net:SAGE:WrathEdXML:AssetDefinition">
+
+	<GameAsset
+		id="WaterTransparency"
+		TypeHash="0">
+		<EntryInheritance
+			id="base"
+			AssetType="BaseAssetType" />
+		<Entry
+			id="TransparentWaterDepth"
+			AssetType="SageReal"
+			IsAttribute="true"
+			Default="3.0" />
+		<Entry
+			id="TransparentWaterMinOpacity"
+			AssetType="SageReal"
+			IsAttribute="true"
+			Default="1.0" />
+		<EntryReference
+			id="StandingWaterTexture"
+			AssetType="Texture"
+			IsAttribute="true" />
+		<Entry
+			id="RiverTransparencyMultiplier"
+			AssetType="SageReal"
+			IsAttribute="true"
+			Default="1.0" />
+		<EntryRelocation
+			id="StandingWaterColor"
+			AssetType="Color3" />
+		<EntryRelocation
+			id="RadarWaterColor"
+			AssetType="Color3" />
+		<EntryRelocation
+			id="ReflectionGuard"
+			AssetType="Color2D" />
+		<Entry
+			id="AdditiveBlending"
+			AssetType="SageBool"
+			IsAttribute="true"
+			Default="false" />
+		<Entry
+			id="fill"
+			AssetType="Byte"
+			IsVoid="true" />
+	</GameAsset>
+
+</AssetDefinition>

@@ -10,9 +10,18 @@
 			id="AttachToBone"
 			AssetType="String"
 			IsAttribute="true" />
-		<Entry
+		<EntryRelocation
 			id="OpacityEnvelopeModuleData"
 			AssetType="SimpleEnvelopeType" />
+		<Entry
+			id="FollowTarget"
+			AssetType="SageBool"
+			IsAttribute="true"
+			Default="false" />
+		<Entry
+			id="fill"
+			AssetType="Byte"
+			IsVoid="true" />
 	</Asset>
 
 </AssetDefinition>

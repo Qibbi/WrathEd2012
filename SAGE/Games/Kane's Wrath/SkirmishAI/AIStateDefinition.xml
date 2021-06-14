@@ -852,9 +852,7 @@
 			AssetType="AIStateDefinition" />
 		<Entry
 			id="Budget"
-			AssetType="AIBankBudget"
-			MinLength="1"
-			MaxLength="1" />
+			AssetType="AIBankBudget" />
 	</GameAsset>
 
 	<Asset
