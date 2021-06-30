@@ -103,7 +103,7 @@
 			id="TurnTimeDamagedSeconds"
 			AssetType="Time"
 			IsAttribute="true"
-			Default="1.0s" />
+			Default="0s" />
 		<Entry
 			id="SlowTurnRadius"
 			AssetType="SageReal"

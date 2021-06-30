@@ -50,9 +50,9 @@
 			id="Prerequisite"
 			AssetType="ExperienceLevelTemplateRef"
 			IsAttribute="true" />
-		<EntryRelocation
+		<EntryReference
 			id="LevelUpOCL"
-			AssetType="ObjectCreationListRef"
+			AssetType="ObjectCreationList"
 			IsAttribute="true" />
 		<Entry
 			id="ModelConditionState"

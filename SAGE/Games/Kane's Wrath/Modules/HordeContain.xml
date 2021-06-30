@@ -69,9 +69,9 @@
 
 	<Asset
 		id="BannerCarrierPosType">
-		<Entry
+		<EntryWeakReference
 			id="UnitType"
-			AssetType="GameObjectWeakRef" />
+			AssetType="GameObject" />
 		<Entry
 			id="Pos"
 			AssetType="Coord2D" />
