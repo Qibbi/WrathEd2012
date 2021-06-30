@@ -15,7 +15,7 @@
 			id="ScanInterval"
 			AssetType="Time"
 			IsAttribute="true"
-			Default="0" />
+			Default="0s" />
 		<EntryRelocation
 			id="Stuff"
 			AssetType="ObjectFilter" />

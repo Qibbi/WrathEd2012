@@ -15,6 +15,10 @@
 			AssetType="SageUnsignedInt"
 			IsAttribute="true" />
 		<Entry
+			id="KillOnDeath"
+			AssetType="SageBool"
+			IsAttribute="true" />
+		<Entry
 			id="fill"
 			AssetType="Byte"
 			IsVoid="true" />

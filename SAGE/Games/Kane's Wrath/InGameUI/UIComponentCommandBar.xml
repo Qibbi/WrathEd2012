@@ -7,53 +7,23 @@
 			id="base"
 			AssetType="UIBaseComponent" />
 		<Entry
-			id="StackLevels"
-			AssetType="SageInt"
-			IsAttribute="true"
-			Default="3" />
-		<Entry
-			id="CommandBarImageBaseName"
+			id="HomeButtonImageName"
 			AssetType="String"
 			IsAttribute="true"
 			Default="CbarImage" />
 		<Entry
-			id="RenderClockName"
+			id="ButtonSlotImageBaseName"
 			AssetType="String"
 			IsAttribute="true"
-			IsRequired="true" />
+			Default="CbarSlot" />
 		<Entry
-			id="TabNameBookmarks"
-			AssetType="StringHash"
+			id="GeneralButtonImageBaseName"
+			AssetType="String"
 			IsAttribute="true"
-			IsRequired="true" />
+			Default="CbarGeneral" />
 		<Entry
-			id="TabNamePowers"
-			AssetType="StringHash"
-			IsAttribute="true"
-			IsRequired="true" />
-		<Entry
-			id="TabNameGroundUnits"
-			AssetType="StringHash"
-			IsAttribute="true"
-			IsRequired="true" />
-		<Entry
-			id="TabNameVehicles"
-			AssetType="StringHash"
-			IsAttribute="true"
-			IsRequired="true" />
-		<Entry
-			id="TabNameAirUnits"
-			AssetType="StringHash"
-			IsAttribute="true"
-			IsRequired="true" />
-		<Entry
-			id="TabNameStructures"
-			AssetType="StringHash"
-			IsAttribute="true"
-			IsRequired="true" />
-		<Entry
-			id="TabNameBaseDefenses"
-			AssetType="StringHash"
+			id="RenderClockName"
+			AssetType="String"
 			IsAttribute="true"
 			IsRequired="true" />
 		<Entry
@@ -64,36 +34,6 @@
 		<EntryWeakReference
 			id="ClockImage"
 			AssetType="PackedTextureImage"
-			IsAttribute="true"
-			IsRequired="true" />
-		<EntryWeakReference
-			id="DrillUpButtonId"
-			AssetType="LogicCommand"
-			IsAttribute="true"
-			IsRequired="true" />
-		<EntryWeakReference
-			id="StanceDrillDownButtonId"
-			AssetType="LogicCommand"
-			IsAttribute="true"
-			IsRequired="true" />
-		<EntryWeakReference
-			id="TogglePowerButtonId"
-			AssetType="LogicCommand"
-			IsAttribute="true"
-			IsRequired="true" />
-		<EntryWeakReference
-			id="SelfRepairButtonId"
-			AssetType="LogicCommand"
-			IsAttribute="true"
-			IsRequired="true" />
-		<EntryWeakReference
-			id="SellButtonId"
-			AssetType="LogicCommand"
-			IsAttribute="true"
-			IsRequired="true" />
-		<EntryWeakReference
-			id="SetDefaultBuildingButtonId"
-			AssetType="LogicCommand"
 			IsAttribute="true"
 			IsRequired="true" />
 		<Entry
@@ -118,6 +58,46 @@
 			IsRequired="true" />
 		<Entry
 			id="UnitCapAlmostNoMoreCP"
+			AssetType="String"
+			IsAttribute="true"
+			IsRequired="true" />
+		<Entry
+			id="ScrollPowersSoundName"
+			AssetType="String"
+			IsAttribute="true"
+			IsRequired="true" />
+		<Entry
+			id="OpenUISoundName"
+			AssetType="String"
+			IsAttribute="true"
+			IsRequired="true" />
+		<Entry
+			id="CloseUISoundName"
+			AssetType="String"
+			IsAttribute="true"
+			IsRequired="true" />
+		<Entry
+			id="HighlightButtonSoundName"
+			AssetType="String"
+			IsAttribute="true"
+			IsRequired="true" />
+		<Entry
+			id="SelectButtonSoundName"
+			AssetType="String"
+			IsAttribute="true"
+			IsRequired="true" />
+		<Entry
+			id="ZoomInSoundName"
+			AssetType="String"
+			IsAttribute="true"
+			IsRequired="true" />
+		<Entry
+			id="ZoomOutSoundName"
+			AssetType="String"
+			IsAttribute="true"
+			IsRequired="true" />
+		<Entry
+			id="CycleSoundName"
 			AssetType="String"
 			IsAttribute="true"
 			IsRequired="true" />

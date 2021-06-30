@@ -9,31 +9,24 @@
 	</Asset>
 
 	<Asset
-		id="MusicScriptConditionRef">
+		id="FXListRef">
 		<EntryReference
-			id="MusicScriptConditionNuggetBase"
-			AssetType="MusicScriptConditionNuggetBase" />
+			id="FXList"
+			AssetType="FXList" />
 	</Asset>
 
 	<Asset
-		id="MusicScriptTrackRef">
+		id="FXParticleSystemRef">
 		<EntryReference
-			id="MusicScriptTrack"
-			AssetType="MusicScriptTrack" />
+			id="FXParticleSystemTemplate"
+			AssetType="FXParticleSystemTemplate" />
 	</Asset>
 
 	<Asset
-		id="AudioEventInfoRef">
+		id="WeaponTemplateRef">
 		<EntryReference
-			id="AudioEventInfo"
-			AssetType="AudioEventInfo" />
-	</Asset>
-
-	<Asset
-		id="RenderObjectRef">
-		<EntryReference
-			id="BaseRenderAssetType"
-			AssetType="BaseRenderAssetType" />
+			id="WeaponTemplate"
+			AssetType="WeaponTemplate" />
 	</Asset>
 
 	<Asset
@@ -44,38 +37,10 @@
 	</Asset>
 
 	<Asset
-		id="MissionTemplateRef">
-		<EntryReference
-			id="MissionTemplate"
-			AssetType="MissionTemplate" />
-	</Asset>
-
-	<Asset
-		id="TheaterOfWarTemplateRef">
-		<EntryReference
-			id="TheaterOfWarTemplate"
-			AssetType="TheaterOfWarTemplate" />
-	</Asset>
-
-	<Asset
 		id="ObjectCreationListRef">
 		<EntryReference
 			id="ObjectCreationList"
 			AssetType="ObjectCreationList" />
-	</Asset>
-
-	<Asset
-		id="ExperienceLevelTemplateRef">
-		<EntryReference
-			id="ExperienceLevelTemplate"
-			AssetType="ExperienceLevelTemplate" />
-	</Asset>
-
-	<Asset
-		id="FXListRef">
-		<EntryReference
-			id="FXList"
-			AssetType="FXList" />
 	</Asset>
 
 	<Asset
@@ -114,6 +79,20 @@
 	</Asset>
 
 	<Asset
+		id="RenderObjectRef">
+		<EntryReference
+			id="BaseRenderAssetType"
+			AssetType="BaseRenderAssetType" />
+	</Asset>
+
+	<Asset
+		id="TextureRef">
+		<EntryReference
+			id="Texture"
+			AssetType="Texture" />
+	</Asset>
+
+	<Asset
 		id="AttributeModifierRef">
 		<EntryReference
 			id="AttributeModifier"
@@ -128,13 +107,6 @@
 	</Asset>
 
 	<Asset
-		id="TextureRef">
-		<EntryReference
-			id="Texture"
-			AssetType="Texture" />
-	</Asset>
-
-	<Asset
 		id="LogicCommandRef">
 		<EntryReference
 			id="LogicCommand"
@@ -142,17 +114,10 @@
 	</Asset>
 
 	<Asset
-		id="FXParticleSystemRef">
+		id="HotKeySlotRef">
 		<EntryReference
-			id="FXParticleSystemTemplate"
-			AssetType="FXParticleSystemTemplate" />
-	</Asset>
-
-	<Asset
-		id="WeaponTemplateRef">
-		<EntryReference
-			id="WeaponTemplate"
-			AssetType="WeaponTemplate" />
+			id="HotKeySlot"
+			AssetType="HotKeySlot" />
 	</Asset>
 
 </AssetDefinition>

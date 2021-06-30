@@ -35,7 +35,7 @@
 		<EntryInheritance
 			id="base"
 			AssetType="ClientBehaviorModuleData" />
-		<Entry
+		<EntryRelocation
 			id="MaxUpdateRangeCap"
 			AssetType="SageReal"
 			IsAttribute="true" />

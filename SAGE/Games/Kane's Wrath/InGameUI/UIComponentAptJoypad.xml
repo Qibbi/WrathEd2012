@@ -6,6 +6,20 @@
 		<EntryInheritance
 			id="base"
 			AssetType="UIBaseComponent" />
+		<Entry
+			id="RelayLeftStickPosition"
+			AssetType="SageBool"
+			IsAttribute="true"
+			Default="false" />
+		<Entry
+			id="RelayRightStickPosition"
+			AssetType="SageBool"
+			IsAttribute="true"
+			Default="false" />
+		<Entry
+			id="fill"
+			AssetType="Byte"
+			IsVoid="true" />
 	</Asset>
 
 </AssetDefinition>

@@ -88,6 +88,10 @@
 			AssetType="SageBool"
 			IsAttribute="true"
 			Default="true" />
+		<Entry
+			id="fill"
+			AssetType="Byte"
+			IsVoid="true" />
 		<Runtime>
 			<EntryList
 				id="Tile"

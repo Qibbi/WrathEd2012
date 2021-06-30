@@ -45,11 +45,6 @@
 			IsAttribute="true"
 			Default="0s" />
 		<Entry
-			id="MinToppleDelay"
-			AssetType="Time"
-			IsAttribute="true"
-			Default="0" />
-		<Entry
 			id="MaxToppleDelay"
 			AssetType="Time"
 			IsAttribute="true"
@@ -106,7 +101,7 @@
 			id="MaxToppleBurstDelay"
 			AssetType="Time"
 			IsAttribute="true"
-			Default="0" />
+			Default="0s" />
 		<Entry
 			id="ForceToppleAngle"
 			AssetType="SageReal"

@@ -69,6 +69,34 @@
 	</Asset>
 
 	<Asset
+		id="RealRange">
+		<Entry
+			id="Low"
+			AssetType="SageReal"
+			IsAttribute="true"
+			IsRequired="true" />
+		<Entry
+			id="High"
+			AssetType="SageReal"
+			IsAttribute="true"
+			IsRequired="true" />
+	</Asset>
+	
+	<Asset
+		id="IntRange">
+		<Entry
+			id="Low"
+			AssetType="SageInt"
+			IsAttribute="true"
+			IsRequired="true" />
+		<Entry 
+			id="High"
+			AssetType="SageInt"
+			IsAttribute="true"
+			IsRequired="true" />
+	</Asset>
+
+	<Asset
 		id="Coord2D">
 		<Entry
 			id="x"
@@ -191,6 +219,25 @@
 	</Asset>
 
 	<Asset
+		id="ReplaceTexture">
+		<EntryReference
+			id="Original"
+			AssetType="Texture"
+			IsAttribute="true"/>
+		<EntryReference
+			id="New"
+			AssetType="Texture"
+			IsAttribute="true"/>
+	</Asset>
+
+	<Asset
+		id="AudioEventInfoRef">
+		<EntryReference
+			id="BaseAudioEventInfo"
+			AssetType="BaseAudioEventInfo" />
+	</Asset>
+
+	<Asset
 		id="SoundOrEvaEvent">
 		<EntryRelocation
 			id="Sound"
@@ -209,18 +256,6 @@
 			AssetType="String"
 			MinLength="0"
 			MaxLength="0" />
-	</Asset>
-
-	<Asset
-		id="ReplaceTexture">
-		<EntryReference
-			id="Original"
-			AssetType="Texture"
-			IsAttribute="true"/>
-		<EntryReference
-			id="New"
-			AssetType="Texture"
-			IsAttribute="true"/>
 	</Asset>
 
 	<Asset

@@ -53,6 +53,15 @@
 		<EntryRelocation
 			id="CanEnterFilter"
 			AssetType="ObjectFilter" />
+		<Entry
+			id="ImmediatelyEnabled"
+			AssetType="SageBool"
+			IsAttribute="true"
+			Default="false" />
+		<Entry
+			id="fill"
+			AssetType="Byte"
+			IsVoid="true" />
 	</Asset>
 
 </AssetDefinition>

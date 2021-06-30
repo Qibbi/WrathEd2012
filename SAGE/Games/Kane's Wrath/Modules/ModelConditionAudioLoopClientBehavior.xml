@@ -10,11 +10,13 @@
 		<Entry
 			id="RequiredFlags"
 			AssetType="ModelConditionBitFlags"
-			IsAttribute="true" />
+			IsAttribute="true"
+			Default="" />
 		<Entry
 			id="ExcludedFlags"
 			AssetType="ModelConditionBitFlags"
-			IsAttribute="true" />
+			IsAttribute="true"
+			Default="" />
 	</Asset>
 
 	<Asset

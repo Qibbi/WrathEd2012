@@ -18,7 +18,7 @@
 		<EntryInheritance
 			id="base"
 			AssetType="OpenContainModuleData" />
-		<Entry
+		<EntryRelocation
 			id="InitialRoster"
 			AssetType="InitialRoster" />
 		<Entry

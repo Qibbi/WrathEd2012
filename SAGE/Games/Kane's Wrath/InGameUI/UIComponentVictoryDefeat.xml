@@ -6,6 +6,14 @@
 		<EntryInheritance
 			id="base"
 			AssetType="UIBaseComponent" />
+		<Entry
+			id="PostEndGameMusic"
+			AssetType="String" />
+		<EntryList
+			id="EndGameMusicAlias"
+			AssetType="String"
+			MinLength="0"
+			MaxLength="0" />
 	</Asset>
 
 </AssetDefinition>

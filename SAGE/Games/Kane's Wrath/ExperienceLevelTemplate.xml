@@ -13,6 +13,13 @@
 			IsAttribute="true" />
 	</Asset>
 
+	<Asset
+		id="ExperienceLevelTemplateRef">
+		<EntryReference
+			id="ExperienceLevelTemplate"
+			AssetType="ExperienceLevelTemplate" />
+	</Asset>
+
 	<GameAsset
 		id="ExperienceLevelTemplate"
 		TypeHash="3179140878">
@@ -43,9 +50,9 @@
 			id="Prerequisite"
 			AssetType="ExperienceLevelTemplateRef"
 			IsAttribute="true" />
-		<EntryRelocation
+		<EntryReference
 			id="LevelUpOCL"
-			AssetType="ObjectCreationListRef"
+			AssetType="ObjectCreationList"
 			IsAttribute="true" />
 		<Entry
 			id="ModelConditionState"
