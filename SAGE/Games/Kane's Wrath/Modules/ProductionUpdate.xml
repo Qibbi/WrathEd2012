@@ -105,13 +105,11 @@
 		<EntryWeakReference
 			id="BonusForType"
 			AssetType="GameObject"
-			IsAttribute="true"
-			Default="0" />
+			IsAttribute="true" />
 		<EntryReference
 			id="SpeedBonusAudioLoop"
 			AssetType="AudioEventInfo"
-			IsAttribute="true"
-			Default="0" />
+			IsAttribute="true" />
 		<Entry
 			id="Type"
 			AssetType="ProductionQueueType"
