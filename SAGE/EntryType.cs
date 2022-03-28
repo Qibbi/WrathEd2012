@@ -161,6 +161,14 @@ namespace SAGE
 						}
 						position += 4;
 						break;
+					case DurationUnsignedInt:
+						if (value != null)
+						{
+							Types.DurationUnsignedInt durationUInt = new Types.DurationUnsignedInt(value);
+							FileHelper.SetUInt(durationUInt.Value, position, asset.Content);
+						}
+						position += 4;
+						break;
 					default:
 						bool isImplemented = false;
 						foreach (BaseAssetType baseAssetType in game.Assets.AssetTypes)
@@ -241,7 +249,8 @@ namespace SAGE
 							&& AssetType != SageUnsignedInt
 							&& AssetType != SageUnsignedShort
 							&& AssetType != Time
-							&& AssetType != Velocity)
+							&& AssetType != Velocity
+							&& AssetType != DurationUnsignedInt)
 						{
 							foreach (BaseAssetType baseAssetType in game.Assets.AssetTypes)
 							{
@@ -362,6 +371,14 @@ namespace SAGE
 								}
 								position += 4;
 								break;
+							case DurationUnsignedInt:
+								if (value != string.Empty)
+								{
+									Types.DurationUnsignedInt durationUInt = new Types.DurationUnsignedInt(value);
+									FileHelper.SetUInt(durationUInt.Value, position, asset.Content);
+								}
+								position += 4;
+								break;
 						}
 						break;
 					}
@@ -378,7 +395,8 @@ namespace SAGE
 						&& AssetType != SageUnsignedInt
 						&& AssetType != SageUnsignedShort
 						&& AssetType != Time
-						&& AssetType != Velocity)
+						&& AssetType != Velocity
+						&& AssetType != DurationUnsignedInt)
 					{
 						foreach (BaseAssetType baseAssetType in game.Assets.AssetTypes)
 						{
@@ -458,6 +476,7 @@ namespace SAGE
 							case SageInt:
 							case SageReal:
 							case SageUnsignedInt:
+							case DurationUnsignedInt:
 							case Time:
 							case Velocity:
 								position += 4;

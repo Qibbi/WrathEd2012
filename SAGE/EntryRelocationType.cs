@@ -143,6 +143,16 @@ namespace SAGE
 									FileHelper.SetFloat(velocity.Value, 0, assetRelocation.Content);
 								}
 								break;
+							case DurationUnsignedInt:
+								value = attribute.Value;
+								if (value != string.Empty)
+								{
+									BinaryAsset assetRelocation = new BinaryAsset(4);
+									asset.SubAssets.Add(position, assetRelocation);
+									Types.DurationUnsignedInt durationUInt = new Types.DurationUnsignedInt(value);
+									FileHelper.SetUInt(durationUInt.Value, 0, assetRelocation.Content);
+								}
+								break;
 						}
 						foreach (BaseAssetType relocationBaseAsset in game.Assets.AssetTypes)
 						{
@@ -318,6 +328,16 @@ namespace SAGE
 									asset.SubAssets.Add(position, assetRelocation);
 									Types.Velocity velocity = new Types.Velocity(value);
 									FileHelper.SetFloat(velocity.Value, 0, assetRelocation.Content);
+								}
+								break;
+							case DurationUnsignedInt:
+								value = childNode.InnerText;
+								if (value != string.Empty)
+								{
+									BinaryAsset assetRelocation = new BinaryAsset(4);
+									asset.SubAssets.Add(position, assetRelocation);
+									Types.DurationUnsignedInt durationUInt = new Types.DurationUnsignedInt(value);
+									FileHelper.SetUInt(durationUInt.Value, 0, assetRelocation.Content);
 								}
 								break;
 						}
