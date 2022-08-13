@@ -13,6 +13,8 @@
 		<Entry>HUGE_TWO_LEGS</Entry>
 		<Entry>TREADS</Entry>
 		<Entry>SHIP</Entry>
+		<Entry>MECHAPEDE</Entry>
+		<Entry>MECHAPEDE_HORDE</Entry>
 		<Entry>OTHER</Entry>
 	</EnumAsset>
 
@@ -101,7 +103,7 @@
 			id="TurnTimeDamagedSeconds"
 			AssetType="Time"
 			IsAttribute="true"
-			Default="1.0s" />
+			Default="0s" />
 		<Entry
 			id="SlowTurnRadius"
 			AssetType="SageReal"

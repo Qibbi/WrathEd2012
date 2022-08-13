@@ -28,6 +28,10 @@
 			AssetType="SageBool"
 			IsAttribute="true"
 			Default="False" />
+		<Entry
+			id="fill"
+			AssetType="Byte"
+			IsVoid="true" />
 	</Asset>
 
 	<Asset

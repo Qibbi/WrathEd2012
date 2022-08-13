@@ -132,6 +132,9 @@
 			AssetType="ModelConditionBitFlags"
 			IsAttribute="true"
 			Default="" />
+		<EntryRelocation
+			id="Filter"
+			AssetType="ObjectFilter" />
 	</GameAsset>
 
 	<GameAsset

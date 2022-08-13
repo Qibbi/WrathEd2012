@@ -490,9 +490,9 @@
 			id="SpawnedModelConditionFlags"
 			AssetType="ModelConditionBitFlags"
 			IsAttribute="true" />
-		<EntryReference
+		<EntryWeakReference
 			id="SpawnTemplate"
-			AssetType="GameObjectWeakRef"
+			AssetType="GameObject"
 			IsAttribute="true" />
 	</Asset>
 
@@ -569,7 +569,7 @@
 	</Asset>
 
 	<Asset
-		id="TintObjectsNuggetType">
+		id="DamageFieldNuggetType">
 		<EntryInheritance
 			id="base"
 			AssetType="WeaponEffectNugget" />

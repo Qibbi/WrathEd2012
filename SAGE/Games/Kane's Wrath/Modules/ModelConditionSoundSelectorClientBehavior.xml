@@ -6,12 +6,14 @@
 		<Entry
 			id="RequiredFlags"
 			AssetType="ModelConditionBitFlags"
-			IsAttribute="true" />
+			IsAttribute="true"
+			Default="" />
 		<Entry
 			id="ExcludedFlags"
 			AssetType="ModelConditionBitFlags"
-			IsAttribute="true" />
-		<Entry
+			IsAttribute="true"
+			Default="" />
+		<EntryRelocation
 			id="VoicePriorityOverride"
 			AssetType="SageInt"
 			IsAttribute="true" />

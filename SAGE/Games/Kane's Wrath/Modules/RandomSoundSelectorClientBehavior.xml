@@ -11,7 +11,7 @@
 			AssetType="Percentage"
 			IsAttribute="true"
 			Default="50" />
-		<Entry
+		<EntryRelocation
 			id="VoicePriorityOverride"
 			AssetType="SageInt"
 			IsAttribute="true" />
@@ -26,6 +26,10 @@
 			AssetType="SageBool"
 			IsAttribute="true"
 			Default="False" />
+		<Entry
+			id="fill"
+			AssetType="Byte"
+			IsVoid="true" />
 	</Asset>
 
 </AssetDefinition>

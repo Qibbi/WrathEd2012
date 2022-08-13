@@ -6,11 +6,13 @@
 		<Entry
 			id="RequiredModelConditions"
 			AssetType="ModelConditionBitFlags"
-			IsAttribute="true" />
+			IsAttribute="true"
+			Default="" />
 		<Entry
 			id="ConflictingModelConditions"
 			AssetType="ModelConditionBitFlags"
-			IsAttribute="true" />
+			IsAttribute="true"
+			Default="" />
 		<EntryRelocation
 			id="VoicePriorityOverride"
 			AssetType="SageInt"

@@ -10,7 +10,7 @@
 			id="TiberiumStolenPerUpdate"
 			AssetType="SageInt"
 			IsAttribute="true"
-			Default="0" />
+			Default="1" />
 		<Entry
 			id="DelayBetweenThefts"
 			AssetType="Time"
@@ -29,8 +29,7 @@
 		<Entry
 			id="ModelConditionWhenNotEmpty"
 			AssetType="ModelConditionBitFlags"
-			IsAttribute="true"
-			Default="0" />
+			IsAttribute="true" />
 		<Entry
 			id="PlayWeaponPreFireFX"
 			AssetType="SageBool"
