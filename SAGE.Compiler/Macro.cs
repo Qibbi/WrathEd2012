@@ -41,11 +41,10 @@ namespace SAGE.Compiler
 				string testStringPostFix_nofolder;
 				foreach (string macro in Art)
 				{
-					testString = macro + Path.DirectorySeparatorChar + subfolder + Path.DirectorySeparatorChar + source.Substring(4);
-					testString_nofolder = macro + Path.DirectorySeparatorChar + source.Substring(4);
-
-					testStringPostFix = testString.Substring(0, testString.Length - 4) + "_" + PostFix + testString.Substring(testString.Length - 4);
-					testStringPostFix_nofolder = testString_nofolder.Substring(0, testString_nofolder.Length - 4) + "_" + PostFix + testString_nofolder.Substring(testString_nofolder.Length - 4);
+					testString = Path.Combine(macro, subfolder, source.Substring(4));
+					testString_nofolder = Path.Combine(macro, source.Substring(4));
+					testStringPostFix = Path.Combine(Path.GetDirectoryName(testString), $"{Path.GetFileNameWithoutExtension(testString)}_{PostFix}{Path.GetExtension(testString)}");
+					testStringPostFix_nofolder = Path.Combine(Path.GetDirectoryName(testString_nofolder), $"{Path.GetFileNameWithoutExtension(testString_nofolder)}_{PostFix}{Path.GetExtension(testString_nofolder)}");
 
 					if (File.Exists((result = new Uri(baseUri, testStringPostFix)).LocalPath))
 					{
@@ -71,8 +70,9 @@ namespace SAGE.Compiler
 			{
 				foreach (string macro in Audio)
 				{
-					testString = macro + Path.DirectorySeparatorChar + source.Substring(6);
-					testStringPostFix = testString.Substring(0, testString.Length - 4) + "_" + PostFix + testString.Substring(testString.Length - 4);
+					testString = Path.Combine(macro, source.Substring(6));
+					testStringPostFix = Path.Combine(Path.GetDirectoryName(testString), $"{Path.GetFileNameWithoutExtension(testString)}_{PostFix}{Path.GetExtension(testString)}");
+
 					if (File.Exists((result = new Uri(baseUri, testStringPostFix)).LocalPath))
 					{
 						return result;
@@ -89,8 +89,9 @@ namespace SAGE.Compiler
 			{
 				foreach (string macro in Data)
 				{
-					testString = macro + Path.DirectorySeparatorChar + source.Substring(5);
-					testStringPostFix = testString.Substring(0, testString.Length - 4) + "_" + PostFix + testString.Substring(testString.Length - 4);
+					testString = Path.Combine(macro, source.Substring(5));
+					testStringPostFix = Path.Combine(Path.GetDirectoryName(testString), $"{Path.GetFileNameWithoutExtension(testString)}_{PostFix}{Path.GetExtension(testString)}");
+
 					if (File.Exists((result = new Uri(baseUri, testStringPostFix)).LocalPath))
 					{
 						return result;
