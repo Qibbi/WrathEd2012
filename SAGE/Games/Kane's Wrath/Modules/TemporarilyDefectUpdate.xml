@@ -8,7 +8,7 @@
 			AssetType="UpdateModuleData" />
 		<Entry
 			id="DefectionFrameCount"
-			AssetType="DurationUnsignedInt"
+			AssetType="SageUnsignedInt"
 			IsAttribute="true"
 			Default="0" />
 	</Asset>
