@@ -24,6 +24,11 @@
 		<Entry>INFANTRY_TAB</Entry>
 		<Entry>VEHICLE_TAB</Entry>
 		<Entry>AIRCRAFT_TAB</Entry>
+		<Entry>METAGAME_NEXT_PHASE_BUTTON</Entry>
+		<Entry>DEBUG_A_BUTTON</Entry>
+		<Entry>DEBUG_B_BUTTON</Entry>
+		<Entry>DEBUG_C_BUTTON</Entry>
+		<Entry>DEBUG_D_BUTTON</Entry>
 	</EnumAsset>
 
 </AssetDefinition>
