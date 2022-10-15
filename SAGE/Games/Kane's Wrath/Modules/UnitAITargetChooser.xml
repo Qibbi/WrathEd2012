@@ -49,7 +49,7 @@
 		TypeHash="1472879745">
 		<EntryInheritance
 			id="base"
-			AssetType="TargetingBaseCompare" />
+			AssetType="BaseAssetType" />
 		<EntryList
 			id="Compare"
 			AssetType="TargetingCompareRef"
