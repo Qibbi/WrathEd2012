@@ -9,6 +9,20 @@
 	</Asset>
 
 	<Asset
+		id="MusicScriptConditionRef">
+		<EntryReference
+			id="MusicScriptConditionNuggetBase"
+			AssetType="MusicScriptConditionNuggetBase" />
+	</Asset>
+
+	<Asset
+		id="MusicScriptTrackRef">
+		<EntryReference
+			id="MusicScriptTrack"
+			AssetType="MusicScriptTrack" />
+	</Asset>
+
+	<Asset
 		id="MusicScriptConditionExpensiveNuggetBase">
 		<EntryInheritance
 			id="base"
