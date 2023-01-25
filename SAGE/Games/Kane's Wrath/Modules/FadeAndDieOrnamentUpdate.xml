@@ -17,7 +17,7 @@
 			id="FollowTarget"
 			AssetType="SageBool"
 			IsAttribute="true"
-			Default="False" />
+			Default="false" />
 		<Entry
 			id="fill"
 			AssetType="Byte"
