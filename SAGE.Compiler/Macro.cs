@@ -11,6 +11,7 @@ namespace SAGE.Compiler
 		public static List<string> Data = new List<string>();
 		public static string Root;
 		public static string Terrain;
+		public static string PostFix;
 
 		static Macro()
 		{
@@ -24,19 +25,40 @@ namespace SAGE.Compiler
 			Data.Add(@".\Mods");
 			Data.Add(@".\CnC3Xml");
 			Data.Add(@".\SageXml");
+			PostFix = null;
 		}
 
 		public static Uri Parse(string source)
 		{
 			Uri baseUri = new Uri(Root);
 			string testString;
+			string testStringPostFix;
 			Uri result;
 			if (source.StartsWith("ART:", StringComparison.InvariantCultureIgnoreCase))
 			{
+				string subfolder = source.Substring(4, 2);
+				string testString_nofolder;
+				string testStringPostFix_nofolder;
 				foreach (string macro in Art)
 				{
-					testString = macro + Path.DirectorySeparatorChar + source.Substring(4);
-					if (File.Exists((result = new Uri(baseUri, testString)).LocalPath))
+					testString = Path.Combine(macro, subfolder, source.Substring(4));
+					testString_nofolder = Path.Combine(macro, source.Substring(4));
+					testStringPostFix = Path.Combine(Path.GetDirectoryName(testString), $"{Path.GetFileNameWithoutExtension(testString)}_{PostFix}{Path.GetExtension(testString)}");
+					testStringPostFix_nofolder = Path.Combine(Path.GetDirectoryName(testString_nofolder), $"{Path.GetFileNameWithoutExtension(testString_nofolder)}_{PostFix}{Path.GetExtension(testString_nofolder)}");
+
+					if (File.Exists((result = new Uri(baseUri, testStringPostFix)).LocalPath))
+					{
+						return result;
+					}
+					else if (File.Exists((result = new Uri(baseUri, testStringPostFix_nofolder)).LocalPath))
+					{
+						return result;
+					}
+					else if (File.Exists((result = new Uri(baseUri, testString)).LocalPath))
+					{
+						return result;
+					}
+					else if (File.Exists((result = new Uri(baseUri, testString_nofolder)).LocalPath))
 					{
 						return result;
 					}
@@ -48,8 +70,14 @@ namespace SAGE.Compiler
 			{
 				foreach (string macro in Audio)
 				{
-					testString = macro + Path.DirectorySeparatorChar + source.Substring(6);
-					if (File.Exists((result = new Uri(baseUri, testString)).LocalPath))
+					testString = Path.Combine(macro, source.Substring(6));
+					testStringPostFix = Path.Combine(Path.GetDirectoryName(testString), $"{Path.GetFileNameWithoutExtension(testString)}_{PostFix}{Path.GetExtension(testString)}");
+
+					if (File.Exists((result = new Uri(baseUri, testStringPostFix)).LocalPath))
+					{
+						return result;
+					}
+					else if (File.Exists((result = new Uri(baseUri, testString)).LocalPath))
 					{
 						return result;
 					}
@@ -61,8 +89,14 @@ namespace SAGE.Compiler
 			{
 				foreach (string macro in Data)
 				{
-					testString = macro + Path.DirectorySeparatorChar + source.Substring(5);
-					if (File.Exists((result = new Uri(baseUri, testString)).LocalPath))
+					testString = Path.Combine(macro, source.Substring(5));
+					testStringPostFix = Path.Combine(Path.GetDirectoryName(testString), $"{Path.GetFileNameWithoutExtension(testString)}_{PostFix}{Path.GetExtension(testString)}");
+
+					if (File.Exists((result = new Uri(baseUri, testStringPostFix)).LocalPath))
+					{
+						return result;
+					}
+					else if (File.Exists((result = new Uri(baseUri, testString)).LocalPath))
 					{
 						return result;
 					}

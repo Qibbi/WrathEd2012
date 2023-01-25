@@ -27,6 +27,7 @@ namespace WrathEd
 		private const string Version = "-version";
 		private const string LLod = "-lowLOD";
 		private const string MLod = "-mediumLOD";
+		private const string PostFix = "-postfix";
 
 		private string gameDefinition = "Kane's Wrath";
 
@@ -47,7 +48,7 @@ namespace WrathEd
 			}
 			StartupUri = new Uri("pack://application:,,,/BigView.xaml");
 			bool isGameDefinitionCall = false;
-			/* WrathEd.exe [-gameDefinition:string] [-bigView|[-compile:string [-map] [-terrain:string] [-out:string] [-version:string] [-lowLOD:string] [-mediumLOD:string]] [-root:string] [-art:string] [-audio:string] [-data:string] [-basePatchStream|bps:string,string] */
+			/* WrathEd.exe [-gameDefinition:string] [-bigView|[-compile:string [-map] [-terrain:string] [-out:string] [-version:string] [-lowLOD:string] [-mediumLOD:string]] [-postfix:string] [-root:string] [-art:string] [-audio:string] [-data:string] [-basePatchStream|bps:string,string] */
 			int argIndex = 1;
 			while (args.Length > argIndex)
 			{
@@ -220,6 +221,17 @@ namespace WrathEd
 					else
 					{
 						Globals.BasePatchStream = args[++argIndex];
+					}
+				}
+				else if (args[argIndex].StartsWith(PostFix, StringComparison.InvariantCultureIgnoreCase))
+				{
+					if (args[argIndex].Length > PostFix.Length)
+					{
+						Macro.PostFix = args[argIndex].Substring(PostFix.Length + 1);
+					}
+					else
+					{
+						Macro.PostFix = args[++argIndex];
 					}
 				}
 				++argIndex;
