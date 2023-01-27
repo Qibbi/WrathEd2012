@@ -10,6 +10,39 @@ using SAGE.Stream;
 
 namespace SAGE.Compiler
 {
+    class ShortVector2
+    {
+        public byte[] binary;
+
+        public short X
+        {
+            get
+            {
+                return FileHelper.GetShort(0x00, binary);
+            }
+            set
+            {
+                FileHelper.SetShort(value, 0x00, binary);
+            }
+        }
+
+        public short Y
+        {
+            get
+            {
+                return FileHelper.GetShort(0x02, binary);
+            }
+            set
+            {
+                FileHelper.SetShort(value, 0x02, binary);
+            }
+        }
+
+        public ShortVector2()
+        {
+            binary = new byte[4];
+        }
+    }
     class Vector2
     {
         public byte[] binary;
@@ -90,11 +123,11 @@ namespace SAGE.Compiler
         }
     }
 
-    class RGBAColor
+    class BGRAColor
     {
         public byte[] binary;
 
-        public byte R
+        public byte B
         {
             get
             {
@@ -118,7 +151,7 @@ namespace SAGE.Compiler
             }
         }
 
-        public byte B
+        public byte R
         {
             get
             {
@@ -142,7 +175,7 @@ namespace SAGE.Compiler
             }
         }
 
-        public RGBAColor()
+        public BGRAColor()
         {
             binary = new byte[4];
         }
@@ -150,12 +183,12 @@ namespace SAGE.Compiler
 
     class BoneInfluence
     {
-        public RGBAColor Bones;
+        public ShortVector2 Bones;
         public Vector2 Influences;
 
         public BoneInfluence()
         {
-            Bones = new RGBAColor();
+            Bones = new ShortVector2();
             Influences = new Vector2();
         }
     }
@@ -170,7 +203,7 @@ namespace SAGE.Compiler
         public int TangentsCount;
         public List<Vector3> Binormals;
         public int BinormalsCount;
-        public List<RGBAColor> VertexColors;
+        public List<BGRAColor> VertexColors;
         public List<List<Vector2>> TexCoords;
         public List<BoneInfluence> BoneInfluences;
         public int BoneInfluencesCount;
@@ -326,6 +359,13 @@ namespace SAGE.Compiler
     public unsafe class W3DMesh : CompileHandler
     {
         [StructLayout(LayoutKind.Sequential, Pack = 4)]
+        private struct SShortVector2
+        {
+            public short X;
+            public short Y;
+        }
+
+        [StructLayout(LayoutKind.Sequential, Pack = 4)]
         private struct SVector2
         {
             public float X;
@@ -341,11 +381,11 @@ namespace SAGE.Compiler
         }
 
         [StructLayout(LayoutKind.Sequential, Pack = 4)]
-        private struct SRGBAColor
+        private struct SBGRAColor
         {
-            public byte R;
-            public byte G;
             public byte B;
+            public byte G;
+            public byte R;
             public byte A;
         }
 
@@ -443,7 +483,8 @@ namespace SAGE.Compiler
             VertexData result = new VertexData();
             SVector2* vector2;
             SVector3* vector3;
-            SRGBAColor* color;
+            SBGRAColor* color;
+            SShortVector2* shortVector2;
             BoneInfluence boneInfluence = null;
             for (int idx = 0; idx < w3dVertexData.VertexCount; ++idx)
             {
@@ -479,14 +520,14 @@ namespace SAGE.Compiler
                             n.Add(new Vector3() { X = vector3->X, Y = vector3->Y, Z = vector3->Z });
                             break;
                         case VertexElementUsage.COLOR:
-                            List<RGBAColor> c = result.VertexColors;
+                            List<BGRAColor> c = result.VertexColors;
                             if (c == null)
                             {
-                                c = result.VertexColors = new List<RGBAColor>();
+                                c = result.VertexColors = new List<BGRAColor>();
                             }
-                            color = (SRGBAColor*)vertexData;
+                            color = (SBGRAColor*)vertexData;
                             vertexData += 4;
-                            c.Add(new RGBAColor() { R = color->R, G = color->G, B = color->B, A = color->A });
+                            c.Add(new BGRAColor() { B = color->B, G = color->G, R = color->R, A = color->A });
                             break;
                         case VertexElementUsage.TANGENT:
                             List<Vector3> t = result.Tangents;
@@ -527,13 +568,11 @@ namespace SAGE.Compiler
                                 bi = result.BoneInfluences = new List<BoneInfluence>();
                                 ++result.BoneInfluencesCount;
                             }
-                            color = (SRGBAColor*)vertexData;
+                            shortVector2 = (SShortVector2*)vertexData;
                             vertexData += 4;
                             boneInfluence = new BoneInfluence();
-                            boneInfluence.Bones.R = color->R;
-                            boneInfluence.Bones.G = color->G;
-                            boneInfluence.Bones.B = color->B;
-                            boneInfluence.Bones.A = color->A;
+                            boneInfluence.Bones.X = shortVector2->X;
+                            boneInfluence.Bones.Y = shortVector2->Y;
                             bi.Add(boneInfluence);
                             break;
                         case VertexElementUsage.BLENDWEIGHT:
@@ -548,7 +587,7 @@ namespace SAGE.Compiler
             return result;
         }
 
-        private void WriteRGBAColor(XmlDocument document, XmlNode entryNode, RGBAColor color)
+        private void WriteBGRAColor(XmlDocument document, XmlNode entryNode, BGRAColor color)
         {
             XmlAttribute attribute = document.CreateAttribute("R");
             attribute.Value = (color.R / 255.0).ToString();
@@ -925,11 +964,11 @@ namespace SAGE.Compiler
                 if (vertexData.VertexColors != null)
                 {
                     element = document.CreateElement("VertexColors", _xmlNameSpace);
-                    List<RGBAColor> c = vertexData.VertexColors;
+                    List<BGRAColor> c = vertexData.VertexColors;
                     for (int idy = 0; idy < c.Count; ++idy)
                     {
                         cElement = document.CreateElement("C", _xmlNameSpace);
-                        WriteRGBAColor(document, cElement, c[idy]);
+                        WriteBGRAColor(document, cElement, c[idy]);
                         element.AppendChild(cElement);
                     }
                     entryNode.AppendChild(element);
@@ -1114,13 +1153,13 @@ namespace SAGE.Compiler
                         }
                         break;
                     case "VertexColors":
-                        List<RGBAColor> colorList = new List<RGBAColor>();
+                        List<BGRAColor> colorList = new List<BGRAColor>();
                         vertexData.VertexColors = colorList;
                         foreach (XmlNode colorNode in childNode.ChildNodes)
                         {
                             if (colorNode.Name == "C")
                             {
-                                RGBAColor color = new RGBAColor();
+                                BGRAColor color = new BGRAColor();
                                 color.R = (byte)(float.Parse(colorNode.Attributes.GetNamedItem("R").Value, NumberFormatInfo.InvariantInfo) * 255);
                                 color.G = (byte)(float.Parse(colorNode.Attributes.GetNamedItem("G").Value, NumberFormatInfo.InvariantInfo) * 255);
                                 color.B = (byte)(float.Parse(colorNode.Attributes.GetNamedItem("B").Value, NumberFormatInfo.InvariantInfo) * 255);
@@ -1157,11 +1196,11 @@ namespace SAGE.Compiler
                                     ushort bone = ushort.Parse(boneinfluenceNode.Attributes.GetNamedItem("Bone").Value);
                                     if (bones.Contains(bone))
                                     {
-                                        boneinfluence.Bones.R = (byte)bones.IndexOf(bone);
+                                        boneinfluence.Bones.X = bones.IndexOf(bone);
                                     }
                                     else
                                     {
-                                        boneinfluence.Bones.R = (byte)bones.Count;
+                                        boneinfluence.Bones.X = bones.Count;
                                         bones.Add(bone);
                                     }
                                     boneinfluence.Influences.X = float.Parse(boneinfluenceNode.Attributes.GetNamedItem("Weight").Value, NumberFormatInfo.InvariantInfo);
@@ -1180,11 +1219,11 @@ namespace SAGE.Compiler
                                     ushort bone = ushort.Parse(boneinfluenceNode.Attributes.GetNamedItem("Bone").Value);
                                     if (bones.Contains(bone))
                                     {
-                                        boneinfluenceList[idx].Bones.G = (byte)bones.IndexOf(bone);
+                                        boneinfluenceList[idx].Bones.Y = bones.IndexOf(bone);
                                     }
                                     else
                                     {
-                                        boneinfluenceList[idx].Bones.G = (byte)bones.Count;
+                                        boneinfluenceList[idx].Bones.Y = bones.Count;
                                         bones.Add(bone);
                                     }
                                     boneinfluenceList[idx].Influences.Y = float.Parse(boneinfluenceNode.Attributes.GetNamedItem("Weight").Value, NumberFormatInfo.InvariantInfo);
