@@ -1190,6 +1190,16 @@ namespace SAGE.Compiler
             setTitle("Done.", 0, false);
             setFile(string.Empty);
             setBar(100, true);
+            if (source.AbsolutePath.EndsWith("stringhashes.xml", StringComparison.OrdinalIgnoreCase))
+            {
+                StreamCompiler.game = null;
+                StreamCompiler.baseUri = null;
+                StreamCompiler.setTitle = null;
+                StreamCompiler.setFile = null;
+                StreamCompiler.setAsset = null;
+                StreamCompiler.setBar = null;
+                return hasNoWarning;
+            }
             setTitle("Gathering Hash Table", 0, false);
             setBar(0, false);
             Dictionary<uint, string> stringAndHash = new Dictionary<uint, string>();
