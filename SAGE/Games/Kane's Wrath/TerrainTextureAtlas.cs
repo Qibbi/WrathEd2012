@@ -27,7 +27,7 @@ namespace SAGE.Compiler
 		{
 			List<TerrainTextureTileRuntime> tiles = new List<TerrainTextureTileRuntime>();
 			int atlasSize = 2048;
-			/*foreach (XmlAttribute attribute in node.Attributes)
+			foreach (XmlAttribute attribute in node.Attributes)
 			{
 				switch (attribute.Name)
 				{
@@ -35,7 +35,7 @@ namespace SAGE.Compiler
 						atlasSize = ushort.Parse(attribute.Value);
 						break;
 				}
-			}*/
+			}
 			List<XmlNode> nodes = new List<XmlNode>();
 			foreach (XmlNode childNode in node.ChildNodes)
 			{
@@ -91,17 +91,19 @@ namespace SAGE.Compiler
 					}
 				}
 			}
-			// For now assume each texture has the same size.
-			atlasSize = (int)textureList[0, 0].Header.Width + 32;
-			atlasSize *= atlasSize * (textureList.Length >> 1);
-			atlasSize = (int)Math.Sqrt((double)atlasSize);
-			--atlasSize;
-			atlasSize |= atlasSize >> 1;
-			atlasSize |= atlasSize >> 2;
-			atlasSize |= atlasSize >> 4;
-			atlasSize |= atlasSize >> 8;
-			++atlasSize;
-			byte[] baseContent = new byte[atlasSize * atlasSize * 4];
+            // For now assume each texture has the same size.
+            atlasSize = (int)textureList[0, 0].Header.Width + 32;
+            atlasSize *= (textureList.Length >> 1);
+            atlasSize *= atlasSize;
+            atlasSize = (int)Math.Sqrt((double)atlasSize);
+            --atlasSize;
+            atlasSize |= atlasSize >> 1;
+            atlasSize |= atlasSize >> 2;
+            atlasSize |= atlasSize >> 4;
+            atlasSize |= atlasSize >> 8;
+            atlasSize |= atlasSize >> 16;
+            ++atlasSize;
+            byte[] baseContent = new byte[atlasSize * atlasSize * 4];
 			byte[] normalContent = new byte[atlasSize * atlasSize * 4];
 			for (int tileIdx = 0; tileIdx < textureList.Length >> 1; ++tileIdx)
 			{

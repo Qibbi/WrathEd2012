@@ -1239,9 +1239,16 @@ namespace WrathEd
 #if DEBUG
                 value += "\n\n";
                 StringBuilder sb = new StringBuilder();
-                foreach (string name in streamFiles[0].AssetNames.Values)
+                uint binOffset = 0;
+                foreach (SAGE.Stream.AssetEntry assetEntry in streamFiles[0].AssetEntries)
                 {
-                    sb.AppendLine(name);
+                    sb.Append(binOffset + ": " + streamFiles[0].AssetNames[assetEntry.NameOffset]);
+                    if (assetEntry.BinaryDataSize == 0)
+                    {
+                        sb.Append(" - from base manifest");
+                    }
+                    sb.AppendLine();
+                    binOffset += assetEntry.BinaryDataSize;
                 }
                 value += sb.ToString();
 #endif

@@ -28,6 +28,7 @@ namespace WrathEd
 		private const string LLod = "-lowLOD";
 		private const string MLod = "-mediumLOD";
 		private const string PostFix = "-postfix";
+		private const string NoStringHashes = "-nostringhash";
 
 		private string gameDefinition = "Kane's Wrath";
 
@@ -83,6 +84,10 @@ namespace WrathEd
 				else if (args[argIndex].StartsWith(Map, StringComparison.InvariantCultureIgnoreCase))
 				{
 					Globals.IsMapCompile = true;
+				}
+				else if (args[argIndex].StartsWith(NoStringHashes, StringComparison.InvariantCultureIgnoreCase))
+				{
+					Globals.NoStringHashes = true;
 				}
 				else if (args[argIndex].StartsWith(Terrain, StringComparison.InvariantCultureIgnoreCase))
 				{
@@ -312,6 +317,11 @@ namespace WrathEd
 		{
 			_log.Write(LogType.DEFAULT, Globals.CSF.GetLocalizedString(LocalizedStrings.LogExit));
 			_log.Dispose();
+			if (Globals.IsExitError)
+			{
+				Shutdown(-1);
+			}
+			Shutdown(0);
 		}
 	}
 }

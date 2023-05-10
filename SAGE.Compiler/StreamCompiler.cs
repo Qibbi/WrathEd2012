@@ -462,7 +462,7 @@ namespace SAGE.Compiler
         }
 
         public static bool CompileStream(GameDefinition game, Uri source, Uri baseUri, Uri outUri, string version, string basePatchStream, bool isMapCompile, string lLod, string mLod,
-            Func<string, int, bool, bool> setTitle, Func<string, bool> setFile, Func<string, bool> setAsset, Func<double, bool, bool> setBar, Func<string, bool> setError)
+            Func<string, int, bool, bool> setTitle, Func<string, bool> setFile, Func<string, bool> setAsset, Func<double, bool, bool> setBar, Func<string, bool> setError, bool noStringHashes)
         {
             bool hasNoWarning = true;
             string ErrorDescription;
@@ -482,25 +482,12 @@ namespace SAGE.Compiler
 
             string path = source.LocalPath;
             string file = Path.GetFileNameWithoutExtension(path);
-            path = path.Substring(0, path.LastIndexOf('.'));
             string outPath = outUri.LocalPath;
-            if (outPath.Contains("."))
+            if (!Directory.Exists(outPath))
             {
-                string outFolder = outPath.Substring(outPath.IndexOf(Path.DirectorySeparatorChar));
-                if (!Directory.Exists(outFolder))
-                {
-                    Directory.CreateDirectory(outFolder);
-                }
-                outPath = outPath.Substring(0, outPath.LastIndexOf('.'));
+                Directory.CreateDirectory(outPath);
             }
-            else
-            {
-                if (!Directory.Exists(outPath))
-                {
-                    Directory.CreateDirectory(outPath);
-                }
-                outPath += file;
-            }
+            outPath += file;
 
             List<string> processedFiles = new List<string>();
             int fileCount = 1;
@@ -1190,6 +1177,10 @@ namespace SAGE.Compiler
             setTitle("Done.", 0, false);
             setFile(string.Empty);
             setBar(100, true);
+            if (noStringHashes)
+            {
+                return hasNoWarning;
+            }
             if (source.AbsolutePath.EndsWith("stringhashes.xml", StringComparison.OrdinalIgnoreCase))
             {
                 StreamCompiler.game = null;

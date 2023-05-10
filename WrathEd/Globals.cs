@@ -34,6 +34,7 @@ namespace WrathEd
 
         public static string Compile { get; set; }
         public static string BasePatchStream { get; set; }
+        public static bool NoStringHashes { get; set; }
         public static bool IsMapCompile { get; set; }
         public static string Output { get; set; }
         public static string Version { get; set; }
@@ -46,6 +47,8 @@ namespace WrathEd
         public static Dictionary<uint, Achievement> Achievements { get; set; }
 
         public static CSF CSF;
+
+        public static bool IsExitError { get; set; }
 
         static Globals()
         {

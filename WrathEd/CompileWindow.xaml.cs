@@ -74,10 +74,11 @@ namespace WrathEd
 			}
 			Uri baseUri = new Uri(Macro.Root);
 			Defines.Define.Clear();
-			if (StreamCompiler.CompileStream(Globals.Game, compileUri, baseUri, outputUri, Globals.Version, Globals.BasePatchStream, Globals.IsMapCompile, Globals.LLod, Globals.MLod, SetCompileTitle, SetFileName, SetAssetName, SetBar, SetErrorDesc))
+			if (StreamCompiler.CompileStream(Globals.Game, compileUri, baseUri, outputUri, Globals.Version, Globals.BasePatchStream, Globals.IsMapCompile, Globals.LLod, Globals.MLod, SetCompileTitle, SetFileName, SetAssetName, SetBar, SetErrorDesc, Globals.NoStringHashes))
 			{
 				DispatchClose();
 			}
+			Globals.IsExitError = true;
 		}
 
 		private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs args)

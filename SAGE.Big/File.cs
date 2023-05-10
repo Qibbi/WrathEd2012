@@ -598,7 +598,7 @@ namespace SAGE.Big
         {
             foreach (PackedFile file in Files)
             {
-                if (file.Name == fileName)
+                if (string.Equals(file.Name, fileName, StringComparison.OrdinalIgnoreCase))
                 {
                     return GetFile(file, length, offset);
                 }
