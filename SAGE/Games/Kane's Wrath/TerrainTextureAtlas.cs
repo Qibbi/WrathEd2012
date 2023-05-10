@@ -92,14 +92,24 @@ namespace SAGE.Compiler
 				}
 			}
             // For now assume each texture has the same size.
-			int textureSize = (int)textureList[0, 0].Header.Width + 32;
-			textureSize *= textureSize;
-            textureSize *= textureList.Length >> 1;
+            int textureSize = (int)textureList[0, 0].Header.Width + 32;
             atlasSize = 512;
-			while (textureSize > atlasSize * atlasSize)
-			{
-				atlasSize *= 2;
-			}
+            int numTextures = textureList.Length >> 1;
+            int rows = 1;
+            while (textureSize * numTextures > atlasSize)
+            {
+                bool odd = (numTextures & 1) == 1;
+                numTextures /= 2;
+                rows *= 2;
+                if (textureSize * rows > atlasSize)
+                {
+                    atlasSize *= 2;
+                }
+                if (odd)
+                {
+                    numTextures += 1;
+                }
+            }
             byte[] baseContent = new byte[atlasSize * atlasSize * 4];
 			byte[] normalContent = new byte[atlasSize * atlasSize * 4];
 			for (int tileIdx = 0; tileIdx < textureList.Length >> 1; ++tileIdx)
