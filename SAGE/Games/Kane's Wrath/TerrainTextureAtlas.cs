@@ -92,30 +92,25 @@ namespace SAGE.Compiler
 				}
 			}
             // For now assume each texture has the same size.
-            int textureSize = (int)textureList[0, 0].Header.Width + 32;
-            atlasSize = 512;
+			int textureSize = (int)textureList[0, 0].Header.Width + 32;
+			int atlasX = 512;
+			int atlasY = 512;
             int numTextures = textureList.Length >> 1;
-            int rows = 1;
-            while (textureSize * numTextures > atlasSize)
-            {
-                bool odd = (numTextures & 1) == 1;
-                numTextures /= 2;
-                rows *= 2;
-                if (textureSize * rows > atlasSize)
-                {
-                    atlasSize *= 2;
-                }
-                if (odd)
-                {
-                    numTextures += 1;
-                }
-            }
-            byte[] baseContent = new byte[atlasSize * atlasSize * 4];
-			byte[] normalContent = new byte[atlasSize * atlasSize * 4];
+			int required = textureSize * textureSize * numTextures;
+			while (atlasX * atlasY < required)
+			{
+				atlasX *= 2;
+				if (atlasX * atlasY < required)
+				{
+					atlasY *= 2;
+				}
+			}
+            byte[] baseContent = new byte[atlasX * atlasY * 4];
+			byte[] normalContent = new byte[atlasX * atlasY * 4];
 			for (int tileIdx = 0; tileIdx < textureList.Length >> 1; ++tileIdx)
 			{
 				uint size = textureList[tileIdx, 0].Header.Width;
-				if (positionX + size + 16 > atlasSize)
+				if (positionX + size + 16 > atlasX)
 				{
 					positionX = 16;
 					positionY += nextY;
@@ -144,14 +139,14 @@ namespace SAGE.Compiler
 						{
 							tileX = (int)(tileX - size);
 						}
-						baseContent[(positionY + idy) * atlasSize * 4 + (positionX + idx) * 4] = color[tileY * size * 4 + tileX * 4];
-						baseContent[(positionY + idy) * atlasSize * 4 + (positionX + idx) * 4 + 1] = color[tileY * size * 4 + tileX * 4 + 1];
-						baseContent[(positionY + idy) * atlasSize * 4 + (positionX + idx) * 4 + 2] = color[tileY * size * 4 + tileX * 4 + 2];
-						baseContent[(positionY + idy) * atlasSize * 4 + (positionX + idx) * 4 + 3] = color[tileY * size * 4 + tileX * 4 + 3];
-						normalContent[(positionY + idy) * atlasSize * 4 + (positionX + idx) * 4] = normal[tileY * size * 4 + tileX * 4];
-						normalContent[(positionY + idy) * atlasSize * 4 + (positionX + idx) * 4 + 1] = normal[tileY * size * 4 + tileX * 4 + 1];
-						normalContent[(positionY + idy) * atlasSize * 4 + (positionX + idx) * 4 + 2] = normal[tileY * size * 4 + tileX * 4 + 2];
-						normalContent[(positionY + idy) * atlasSize * 4 + (positionX + idx) * 4 + 3] = normal[tileY * size * 4 + tileX * 4 + 3];
+						baseContent[(positionY + idy) * atlasX * 4 + (positionX + idx) * 4] = color[tileY * size * 4 + tileX * 4];
+						baseContent[(positionY + idy) * atlasX * 4 + (positionX + idx) * 4 + 1] = color[tileY * size * 4 + tileX * 4 + 1];
+						baseContent[(positionY + idy) * atlasX * 4 + (positionX + idx) * 4 + 2] = color[tileY * size * 4 + tileX * 4 + 2];
+						baseContent[(positionY + idy) * atlasX * 4 + (positionX + idx) * 4 + 3] = color[tileY * size * 4 + tileX * 4 + 3];
+						normalContent[(positionY + idy) * atlasX * 4 + (positionX + idx) * 4] = normal[tileY * size * 4 + tileX * 4];
+						normalContent[(positionY + idy) * atlasX * 4 + (positionX + idx) * 4 + 1] = normal[tileY * size * 4 + tileX * 4 + 1];
+						normalContent[(positionY + idy) * atlasX * 4 + (positionX + idx) * 4 + 2] = normal[tileY * size * 4 + tileX * 4 + 2];
+						normalContent[(positionY + idy) * atlasX * 4 + (positionX + idx) * 4 + 3] = normal[tileY * size * 4 + tileX * 4 + 3];
 					}
 				}
 				FileHelper.SetUShort((ushort)positionX, 12 * tileIdx + 4, tileList.Content);
@@ -173,11 +168,11 @@ namespace SAGE.Compiler
 			DDSFile baseAtlas = null;
 			if (hasAlpha)
 			{
-				baseAtlas = new DDSFile((uint)atlasSize, (uint)atlasSize, 5, DDSType.DXT5, baseContent);
+				baseAtlas = new DDSFile((uint)atlasX, (uint)atlasY, 5, DDSType.DXT5, baseContent);
 			}
 			else
 			{
-				baseAtlas = new DDSFile((uint)atlasSize, (uint)atlasSize, 5, DDSType.DXT1, baseContent);
+				baseAtlas = new DDSFile((uint)atlasX, (uint)atlasY, 5, DDSType.DXT1, baseContent);
 			}
 			hasAlpha = false;
 			for (int idx = 0; idx < nodes.Count; ++idx)
@@ -191,11 +186,11 @@ namespace SAGE.Compiler
 			DDSFile normalAtlas = null;
 			if (hasAlpha)
 			{
-				normalAtlas = new DDSFile((uint)atlasSize, (uint)atlasSize, 5, DDSType.A1R5G5B5, normalContent, true);
+				normalAtlas = new DDSFile((uint)atlasX, (uint)atlasY, 5, DDSType.A1R5G5B5, normalContent, true);
 			}
 			else
 			{
-				normalAtlas = new DDSFile((uint)atlasSize, (uint)atlasSize, 5, DDSType.R5G5B5, normalContent, true);
+				normalAtlas = new DDSFile((uint)atlasX, (uint)atlasY, 5, DDSType.R5G5B5, normalContent, true);
 			}
 			baseAsset.Content = baseAtlas.Binary;
 			asset.SubAssets.Add(0x0C, baseAsset);
