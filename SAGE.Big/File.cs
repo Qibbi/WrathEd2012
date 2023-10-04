@@ -620,6 +620,7 @@ namespace SAGE.Big
 
         public bool Contains(PackedFile file)
         {
+            if (Files == null) return false;
             for (int idx = 0; idx < Files.Length; ++idx)
             {
                 if (file == Files[idx])
