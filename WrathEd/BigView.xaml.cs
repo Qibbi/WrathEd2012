@@ -134,6 +134,7 @@ namespace WrathEd
             int bigFileCount = 0;
             foreach (SAGE.Big.File bigFile in bigFiles)
             {
+                if (bigFile.Files == null) continue;
                 foreach (SAGE.Big.PackedFile file in bigFile.Files)
                 {
                     string fileName = file.Name;
