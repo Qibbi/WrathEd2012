@@ -20,7 +20,7 @@ namespace SAGE.Big
         private string _source;
         private FileStream stream;
 
-        public PackedFile[] Files { get; private set; }
+        public PackedFile[] Files { get; private set; } = new PackedFile[0];
 
         public uint BigType { get { return FileHelper.GetUInt(0x00, bigHeader); } }
         public uint BigSize { get { return FileHelper.GetUInt(0x04, bigHeader); } }

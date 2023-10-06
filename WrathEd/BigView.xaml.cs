@@ -117,7 +117,10 @@ namespace WrathEd
                                     {
                                         bigUri = new Uri(source, bigUri);
                                     }
-                                    bigFiles.Add(new SAGE.Big.File(bigUri.LocalPath));
+                                    if (File.Exists(bigUri.LocalPath))
+                                    {
+                                        bigFiles.Add(new SAGE.Big.File(bigUri.LocalPath));
+                                    }
                                     break;
                             }
                         }
