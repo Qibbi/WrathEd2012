@@ -40,6 +40,11 @@
 			AssetType="SageBool"
 			IsAttribute="true" />
 		<Entry
+			id="OnlyIfOnLand"
+			AssetType="SageBool"
+			IsAttribute="true"
+			Default="false" />
+		<Entry
 			id="PlayIfSourceIsStealthed"
 			AssetType="SageBool"
 			IsAttribute="true"

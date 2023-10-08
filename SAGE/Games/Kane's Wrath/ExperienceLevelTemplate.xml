@@ -13,6 +13,13 @@
 			IsAttribute="true" />
 	</Asset>
 
+	<Asset
+		id="ExperienceLevelTemplateRef">
+		<EntryReference
+			id="ExperienceLevelTemplate"
+			AssetType="ExperienceLevelTemplate" />
+	</Asset>
+
 	<GameAsset
 		id="ExperienceLevelTemplate"
 		TypeHash="3179140878">

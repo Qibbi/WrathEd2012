@@ -1366,7 +1366,7 @@
 			IsAttribute="true" />
 		<EntryReference
 			id="AutoResolveWeapon"
-			AssetType="ArmorTemplate"
+			AssetType="WeaponTemplate"
 			IsAttribute="true" />
 		<Entry
 			id="AutoResolveLeadership"
@@ -2081,5 +2081,29 @@
 			AssetType="Byte"
 			IsVoid="true" />
 	</GameAsset>
+
+	<Asset
+		id="ArmorType">
+		<Entry
+			id="Conditions"
+			AssetType="String"
+			IsAttribute="true" />
+		<EntryReference
+			id="DamageFX"
+			AssetType="DamageFX"
+			IsAttribute="true" />
+	</Asset>
+
+	<Asset
+		id="ReplaceModule">
+	</Asset>
+
+	<Asset
+		id="InheritableModule">
+	</Asset>
+
+	<Asset
+		id="PerUnitFX">
+	</Asset>
 
 </AssetDefinition>
