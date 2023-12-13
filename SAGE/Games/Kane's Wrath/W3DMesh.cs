@@ -1196,11 +1196,11 @@ namespace SAGE.Compiler
                                     ushort bone = ushort.Parse(boneinfluenceNode.Attributes.GetNamedItem("Bone").Value);
                                     if (bones.Contains(bone))
                                     {
-                                        boneinfluence.Bones.X = bones.IndexOf(bone);
+                                        boneinfluence.Bones.X = (short)bones.IndexOf(bone);
                                     }
                                     else
                                     {
-                                        boneinfluence.Bones.X = bones.Count;
+                                        boneinfluence.Bones.X = (short)bones.Count;
                                         bones.Add(bone);
                                     }
                                     boneinfluence.Influences.X = float.Parse(boneinfluenceNode.Attributes.GetNamedItem("Weight").Value, NumberFormatInfo.InvariantInfo);
@@ -1219,11 +1219,11 @@ namespace SAGE.Compiler
                                     ushort bone = ushort.Parse(boneinfluenceNode.Attributes.GetNamedItem("Bone").Value);
                                     if (bones.Contains(bone))
                                     {
-                                        boneinfluenceList[idx].Bones.Y = bones.IndexOf(bone);
+                                        boneinfluenceList[idx].Bones.Y = (short)bones.IndexOf(bone);
                                     }
                                     else
                                     {
-                                        boneinfluenceList[idx].Bones.Y = bones.Count;
+                                        boneinfluenceList[idx].Bones.Y = (short)bones.Count;
                                         bones.Add(bone);
                                     }
                                     boneinfluenceList[idx].Influences.Y = float.Parse(boneinfluenceNode.Attributes.GetNamedItem("Weight").Value, NumberFormatInfo.InvariantInfo);
@@ -1371,7 +1371,7 @@ namespace SAGE.Compiler
                         }
                         break;
                     case VertexElementUsage.COLOR:
-                        List<RGBAColor> colorsList = vertexData.VertexColors;
+                        List<BGRAColor> colorsList = vertexData.VertexColors;
                         if (colorsList != null)
                         {
                             for (int idy = 0; idy < colorsList.Count; ++idy)
